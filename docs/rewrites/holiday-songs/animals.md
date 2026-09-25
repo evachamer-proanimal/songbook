@@ -6,15 +6,15 @@ title: "Animals"
 
 *(AR Jingle Bells) · Jason Oliver*
 
-<pre class="chords">Cmaj              C             F      C
+<pre class="chords">Cmaj        C       F   C
 Animals animals people now believe
-F                           C
+F               C
 That you should be protected
 C           G.
 From all harm and cruelty, hey
 C.                       C.             F.       C.
 Animals animals soon you will be free
-F.             F.      C.            C.       G.        C
+F.             F.      C.            C.       G.    C
 Once we make Berkeley a Compassionate City</pre>
 
 <pre class="chords">C

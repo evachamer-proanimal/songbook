@@ -10,11 +10,11 @@ title: "Circle Round for Freedom"
 
 <pre class="chords">C
 Circle round for freedom
-F                           G
+F                      G
 Circle round for peace
-       F                        C
+    F                C
 For those of us in prison
-           G       C
+         G    C
 Circle for release</pre>
 
 Circle round the planet  
@@ -27,7 +27,7 @@ Keep the circle whole
 
 - [Circle Round for Freedom](../files/other-movements/Circle%20Round%20for%20Freedom.pdf)
 
-<object data="../files/other-movements/Circle%20Round%20for%20Freedom.pdf" type="application/pdf" width="100%" height="700"><p><a href="../files/other-movements/Circle%20Round%20for%20Freedom.pdf">Circle Round for Freedom</a></p></object>
+<object data="../../files/other-movements/Circle%20Round%20for%20Freedom.pdf" type="application/pdf" width="100%" height="700"><p><a href="../../files/other-movements/Circle%20Round%20for%20Freedom.pdf">Circle Round for Freedom</a></p></object>
 
 
 <!-- sources: gdoc:1VmwxiJdc-7Dv9rGWpnGOn3LBqby8MO10-B1KuYg0tqc; drive:1BZW-RvK7JbT6YFj4a-eEVCyTVQtpd-OW -->

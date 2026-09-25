@@ -10,11 +10,11 @@ title: "Monochrome"
 
 <pre class="chords">Em
 I’ll bring you to better days
-                                       Amadd9
+                     Amadd9
 I’ll care for you
 Em
 But now when the world is grey
-                                 Amadd9
+                  Amadd9
 There’s nothing you gotta do</pre>
 
 Till the end of the monochrome  

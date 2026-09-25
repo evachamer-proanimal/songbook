@@ -18,9 +18,9 @@ title: "Hey There Dahlia"
     I bet it’s lush and green and lovely
     F#m
     And has space for running
-                   Bm
+            Bm
     Growing as you do
-    G            A                        Bm
+    G       A             Bm
     So few get the life you do
     A
     I know it's true</pre>
@@ -35,16 +35,16 @@ title: "Hey There Dahlia"
     You’ve got seventeen pig friends now
     Bm
     Roll around
-    A                                Bm
+    A                  Bm
     In all the mud that’s on the ground
     A
     Mulberry Mound</pre>
 
-    <pre class="chords">D                                Bm
+    <pre class="chords">D                  Bm
     Now you’re happy safe and free
-    D                                Bm
+    D                  Bm
     Oh, you’re happy safe and free
-    D                                Bm
+    D                  Bm
     Now you’re happy safe and free
     Oh, you’re happy safe and free
     D
@@ -60,7 +60,7 @@ title: "Hey There Dahlia"
     Your home is with these pigs and cats and birds
     Bm
     You have it good
-    G                A                        Bm
+    G         A             Bm
     You have the life you wished you could
     A
     Like they all should</pre>
@@ -75,14 +75,14 @@ title: "Hey There Dahlia"
     I hope that’s faded from your mind
     Bm
     We’ll find them all
-    G                 A
+    G         A
     We' ll break the locks
-                    Bm
+             Bm
     Knock down the walls
     A
     We'll free them all</pre>
 
-    <pre class="chords">D                          Bm
+    <pre class="chords">D              Bm
     Now you’re happy safe and free
     Oh, you’re happy safe and free
     Now you’re happy safe and free
@@ -93,13 +93,13 @@ title: "Hey There Dahlia"
     I know it all seems pretty far
     A
     But we’ve got lots of seats in cars
-    D                                     Bm
+    D                    Bm
     Weve got cameras gloves and boots so naturally
     G
     We’ll find the pig farms everywhere
     A
     Let them out for sun and air
-    D                                      Bm
+    D                     Bm
     Your family will be rooting running free
     G
     Dahlia, I can promise you
@@ -116,9 +116,9 @@ title: "Hey There Dahlia"
     You be well and don't you miss me
     D
     Rather I know that you never will
-    F#m                           Bm
+    F#m               Bm
     Because now you live in sanctuary
-    A                              D
+    A                 D
     That’s liberation, that’s for you
     You can do whatever you want to
     Hey there, Dahlia, here's to you
@@ -131,12 +131,6 @@ title: "Hey There Dahlia"
     Happy safe and free  
 
 === "Lyrics"
-
-    ﻿Hey There Dahlia
-
-    Eva Hamer
-
-    http://bit.ly/2kTcSej
 
     <table>
     <colgroup>
@@ -202,7 +196,6 @@ title: "Hey There Dahlia"
     </tr>
     </tbody>
     </table>
-
 
 
 <!-- sources: gdoc:1VyFHlutHOJvBgnOurVOnpUJfr8-g4ceGGhabUAQPIYA; gdoc:1pZ1r-2eR1rSMZlU18AGdKwnSeyOvJ0oKwNtwQ9jKLh8 -->

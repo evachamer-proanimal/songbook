@@ -11,10 +11,10 @@ title: "Courage, My Friend"
 
 <pre class="chords">G
 <strong>Courage, (courage)</strong> my friend (my friend)
-D7                                G
+D7                           G
 You will not walk alone
 I will (I will) walk with you (walk with you)
-         D7                        G
+     D7                G
 And sing your spirit home</pre>
 
 Replace bolded words on repeats:  

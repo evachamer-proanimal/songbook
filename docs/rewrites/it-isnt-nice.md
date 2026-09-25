@@ -1,12 +1,10 @@
 ---
-title: "It Isn't Nice Chords (AR)"
+title: "It Isn’t Nice"
 ---
 
-# It Isn't Nice Chords (AR)
+# It Isn’t Nice
 
-It Isn’t Nice
-
-Malvina Reynolds ([<u>recording</u>](https://www.youtube.com/watch?v=UvC4xq32AX8))
+- [recording](https://www.youtube.com/watch?v=UvC4xq32AX8)
 
 <table>
 <colgroup>
@@ -63,7 +61,6 @@ Malvina Reynolds ([<u>recording</u>](https://www.youtube.com/watch?v=UvC4xq32AX8
 </tr>
 </tbody>
 </table>
-
 
 
 <!-- sources: gdoc:1TFKI2rJT0wFxIxJlc9SuWSlwZq8rAkq7X0wvCkC-Hqo -->

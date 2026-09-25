@@ -11,11 +11,11 @@ title: "Flower on my Grave"
 <pre class="chords">VERSE 1
 G5
 There will be no flower on my grave
-                                       Bm
+                     Bm
 No headstone placed to name me
 G9
 Though I wish I someday will be saved
-                                 Bm
+                  Bm
 I have no hope to be free</pre>
 
 I was born already in a cage  
@@ -24,13 +24,13 @@ I know I’ll die at far too young an age
 They killed my days old brothers  
 
 <pre class="chords">CHORUS
-Bm                          A
+Bm              A
 If I had a voice, I’d use it
-G                                    F#m
+G                    F#m
 If I had a choice, I’d misbehave
-Bm                                A
+Bm                  A
 If there was a way, I’d choose it
-G                                          F#
+G                       F#
 That I’d have a flower on my grave</pre>
 
 VERSE 2  

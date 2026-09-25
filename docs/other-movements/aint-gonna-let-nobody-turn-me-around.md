@@ -8,12 +8,12 @@ title: "Ain’t Gonna Let Nobody Turn Me Around"
 
 <pre class="chords">Am
 Ain't gonna let <strong>nobody</strong> turn me around
-E7                           Am
+E7                      Am
 Turn me around, turn me around
 Ain't gonna let nobody turn me around
-                  E7
+               E7
 I'm gonna keep on a-walkin', keep on a-talkin'
-                                              Am
+                                      Am
 Gonna build a brand new world</pre>
 
 (orig. “Marchin' down to freedom land”)  

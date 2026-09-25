@@ -21,15 +21,15 @@ So morally aren't we the same?
 Don’t we know how to love
 They’re different yes but they’re still sentient nonetheless
 So why must we spill their blood?
-   Cmaj
+  Cmaj
 So how can we justify
-  Bm
+ Bm
 Taking somebody’s life
  Dm
 Just because we're smarter
-  Fmaj
+ Fmaj
 Just because we're stronger
-  Cmaj
+ Cmaj
 Just because we like the taste
 Just because we have the power
 How can might ever make things right

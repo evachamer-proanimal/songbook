@@ -17,12 +17,12 @@ I will come closer
 When you’re in pain
 I will stay with you
 When you’re afraid
-                F
+           F
 I will watch for you
-                   C      F     C
+                C   F   C
 All through the night
 And if you need me
-                C G C
+              C G C
 I will fight</pre>
 
 

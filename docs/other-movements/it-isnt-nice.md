@@ -1,12 +1,10 @@
 ---
-title: "It Isn't Nice"
+title: "It Isn’t Nice"
 ---
 
-# It Isn't Nice
+# It Isn’t Nice
 
-It Isn’t Nice
-
-Malvina Reynolds
+*Malvina Reynolds*
 
 <table>
 <colgroup>
@@ -67,7 +65,6 @@ Malvina Reynolds
 </tr>
 </tbody>
 </table>
-
 
 
 <!-- sources: gdoc:1bIc45FLVAIXybCYzyh8gJP-MSaXF4Nwet1nJtBe5Th4 -->

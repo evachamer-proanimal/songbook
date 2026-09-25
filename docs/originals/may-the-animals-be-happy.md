@@ -8,12 +8,12 @@ title: "May the Animals Be Happy"
 
 - [Recording](https://soundcloud.com/evahamer/may-the-animals-be-happy)
 
-<pre class="chords">        C
+<pre class="chords">    C
 May <strong>the animals</strong> be happy
-              G
+          G
 May each one of them be safe
 And may justice come completely
-       C
+    C
 Into each and every cage</pre>
 
 Replace bold words on repeats  

@@ -4,11 +4,9 @@ title: "Mushroom Song"
 
 # Mushroom Song
 
-Mushroom Song
+*Eva Hamer*
 
-Eva Hamer
-
-https://www.facebook.com/directactioneverywherechicago/videos/1210829585631756/
+- [Recording](https://www.facebook.com/directactioneverywherechicago/videos/1210829585631756/)
 
 <table>
 <colgroup>
@@ -68,7 +66,6 @@ https://www.facebook.com/directactioneverywherechicago/videos/1210829585631756/
 </tr>
 </tbody>
 </table>
-
 
 
 <!-- sources: gdoc:1-JUQAcJLgNR5KCQrG84m5nfG6Suhz1keR-NqwMpkexg -->

@@ -6,7 +6,7 @@ title: "Animal Liberation Now"
 
 *Ernesto Melchor Alonso*
 
-<pre class="chords">B5                      A5
+<pre class="chords">B5                   A5
 Please open your mind and heart
 B5
 I’ve got so much to tell you

@@ -146,16 +146,39 @@ def has_table(md):
 
 
 def load_word(path):
-    """Word docs (not Docs exports): pandoc plain text; collapse the blank line after chord lines."""
-    txt = pandoc(path, "plain")
-    lines = txt.splitlines()
-    lenient = count_chord_lines(txt) >= 2
-    out, i = [], 0
+    """Word docs (not Docs exports): read paragraphs directly so blank lines and tabs survive."""
+    import docx
+    d = docx.Document(path)
+    lines = []
+    for p in d.paragraphs:
+        t = p.text.rstrip()
+        # keep hyperlinks that python-docx may drop from .text
+        for h in getattr(p, "hyperlinks", []):
+            if h.address and h.address not in t:
+                t = (t + " " + h.address).strip()
+        lines.append(t)
+    txt = "\n".join(lines)
+    return re.sub(r"\n{3,}", "\n\n", txt).strip("\n")
+
+
+def merge_tables(md, docx_path):
+    """Replace flattened Markdown tables in a Docs export with pandoc's HTML tables (same order)."""
+    html_tables = re.findall(r"<table.*?</table>", clean_gfm(pandoc(docx_path, "gfm")), re.S)
+    lines = md.splitlines()
+    out, i, n = [], 0, 0
     while i < len(lines):
-        out.append(lines[i])
-        if is_chord_line(lines[i], lenient) and i + 1 < len(lines) and not lines[i + 1].strip():
-            i += 1  # drop the blank between chord line and its lyric
-        i += 1
+        if lines[i].lstrip().startswith("|"):
+            j = i
+            while j < len(lines) and lines[j].lstrip().startswith("|"):
+                j += 1
+            if n < len(html_tables):
+                out += ["", html_tables[n], ""]
+            else:
+                out += lines[i:j]
+            n += 1
+            i = j
+        else:
+            out.append(lines[i]); i += 1
     return "\n".join(out)
 
 
@@ -193,11 +216,14 @@ def parse_song(md, fallback_title):
     lenient = count_chord_lines(md) >= 2
     if hdr and len(hdr) <= 6 and not is_chord_line(hdr[0], lenient):
         cand = tidy_title(hdr[0])
-        if "http" in cand or "[" in cand or len(cand) > 60:
-            cand = None
+        if "http" in cand or "[" in cand:
+            cand, consumed = None, 0
+        elif len(cand) > 60:
+            cand, consumed = None, 1
+        else:
+            consumed = 1
         title = cand
-        consumed = 1 if cand else 0
-        for l in hdr[consumed:] if cand else []:
+        for l in hdr[consumed:] if consumed else []:
             s = l.strip()
             if is_chord_line(l, lenient):
                 break
@@ -227,10 +253,39 @@ def parse_song(md, fallback_title):
 
 # ---------------------------------------------------------------- rendering
 
+SPACE_W = 0.55   # width of a space relative to an average letter in the proportional fonts Docs used
+TAB_W = 7        # Docs default tab stop (0.5in) in average-letter units
+
+
+def reflow_chord_line(line):
+    """Re-place chord tokens so they land where they sat in the proportional-font original."""
+    pos, out, i = 0.0, [], 0
+    tokens = []
+    for m in re.finditer(r"\S+|\s", line):
+        ch = m.group(0)
+        if ch == " ":
+            pos += SPACE_W
+        elif ch == "\t":
+            pos = (int(pos // TAB_W) + 1) * TAB_W
+        elif ch.isspace():
+            pos += SPACE_W
+        else:
+            tokens.append((pos, ch))
+            pos += len(ch)
+    s, col = "", 0
+    for p, tok in tokens:
+        target = max(int(round(p)), col + (1 if s else 0))
+        s += " " * (target - col) + tok
+        col = target + len(tok)
+    return s
+
+
 def render_pre(block_lines):
     out = []
+    lenient = count_chord_lines("\n".join(block_lines)) >= 1
     for l in block_lines:
-        l = unescape_md(l.rstrip()).expandtabs(8)
+        l = unescape_md(l.rstrip())
+        l = reflow_chord_line(l) if is_chord_line(l, lenient) else l.expandtabs(4)
         l = html.escape(l, quote=False)
         l = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", l)
         l = LINK_MD.sub(lambda m: f'<a href="{m.group(2)}">{m.group(1)}</a>', l)
@@ -253,7 +308,9 @@ def render_body(body):
         blocks.append(cur)
     out = []
     for b in blocks:
-        if any(is_chord_line(l, lenient) for l in b):
+        if b[0].lstrip().startswith("<table"):
+            out.append("\n".join(b) + "\n")
+        elif any(is_chord_line(l, lenient) for l in b):
             out.append(render_pre(b))
         else:
             para = []
@@ -293,13 +350,15 @@ def render_page(title, credits, links, variants, attachments, sources):
             lines.append(f"- [{label}]({rel})")
         lines.append("")
         for label, rel in attachments:
+            # raw HTML is not rewritten by MkDocs; pages are served as directories, so go one level further up
+            h = "../" + rel
             if rel.lower().endswith(".pdf"):
                 lines.append(
-                    f'<object data="{rel}" type="application/pdf" width="100%" height="700">'
-                    f'<p><a href="{rel}">{label}</a></p></object>\n'
+                    f'<object data="{h}" type="application/pdf" width="100%" height="700">'
+                    f'<p><a href="{h}">{label}</a></p></object>\n'
                 )
             elif rel.lower().endswith((".mp3", ".m4a", ".wav")):
-                lines.append(f'<audio controls preload="none" src="{rel}"></audio>\n')
+                lines.append(f'<audio controls preload="none" src="{h}"></audio>\n')
     lines.append("\n<!-- sources: " + "; ".join(sources) + " -->\n")
     return "\n".join(lines)
 
@@ -378,19 +437,12 @@ def main():
                 ov = OVERRIDES.get(it["name"], {})
                 if it["kind"] == "Google Docs":
                     md = load_doc_markdown(f)
-                    if has_table(md) or title_from_name:
-                        docx = os.path.join(it["rawdir"], it["files"][1])
-                        body_md = clean_gfm(pandoc(docx, "gfm")) if has_table(md) else None
-                        if body_md is None:
-                            parsed = parse_song(md, b)
-                            parsed["title"] = b
-                            rendered = render_body(parsed["body"])
-                        else:
-                            parsed = {"title": b, "credits": [], "links": [], "body": body_md}
-                            rendered = body_md + "\n"
-                    else:
-                        parsed = parse_song(md, b)
-                        rendered = render_body(parsed["body"])
+                    if has_table(md):
+                        md = merge_tables(md, os.path.join(it["rawdir"], it["files"][1]))
+                    parsed = parse_song(md, b)
+                    if title_from_name:
+                        parsed["title"] = b
+                    rendered = render_body(parsed["body"])
                     sources.append(f"gdoc:{it['id']}")
                 else:
                     txt = load_word(f)
@@ -436,17 +488,28 @@ def main():
                 title = title or b
             title = title or key
             # same title twice in a section -> fall back to the Drive name for the second
-            if norm(title) in used_titles and drive_base and norm(drive_base) != norm(title):
-                title = drive_base
-            elif norm(title) in used_titles:
-                first = used_titles[norm(title)]
-                title = f"{title} ({docs_sorted[0][0]['name'] if docs_sorted else 'alt'})"
-            used_titles[norm(title)] = title
+            if norm(title) in used_titles:
+                first_title, first_base, first_fn = used_titles[norm(title)]
+                a, b2 = (first_base or "").split(), (drive_base or "").split()
+                k = 0
+                while k < min(len(a), len(b2)) and norm(a[k]) == norm(b2[k]):
+                    k += 1
+                suf1, suf2 = " ".join(a[k:]).strip(" -–:()"), " ".join(b2[k:]).strip(" -–:()")
+                if suf1 and first_fn:
+                    # retitle the first page as well so the pair reads "X (A)" / "X (B)"
+                    new_first = f"{first_title} ({suf1})"
+                    fp = os.path.join(outdir, first_fn)
+                    txt = open(fp, encoding="utf-8").read().replace(f'title: "{first_title}"', f'title: "{new_first}"', 1)
+                    txt = txt.replace(f"# {first_title}\n", f"# {new_first}\n", 1)
+                    open(fp, "w", encoding="utf-8").write(txt)
+                    pages[:] = [(new_first if fn == f"{subdir}/{first_fn}" else t, fn) for t, fn in pages]
+                title = f"{title} ({suf2})" if suf2 else f"{title} (2)"
             slug = slugify(title)
             fn = slug + ".md"
             n = 2
             while os.path.exists(os.path.join(outdir, fn)):
                 fn = f"{slug}-{n}.md"; n += 1
+            used_titles[norm(title.split(" (")[0]) if "(" in title else norm(title)] = (title, drive_base, fn)
             with open(os.path.join(outdir, fn), "w", encoding="utf-8") as fh:
                 fh.write(render_page(title, credits, links, variants, attachments, sources))
             pages.append((title, f"{subdir}/{fn}"))

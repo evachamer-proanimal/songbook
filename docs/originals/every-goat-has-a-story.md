@@ -9,11 +9,11 @@ title: "Every Goat Has a Story"
 <pre class="chords">(repeat each line)
 C
 <strong>Every goat</strong> has a story
-                                   G
+                              G
 And you’ll know when you’re near
-                               C
+                         C
 That each one deserves freedom
-              G                  C       G     C
+          G           C   G   C
 That’s the reason I’m here</pre>
 
 **Every bird/ every cow/ every lamb/ each chicken/ Each animal/ each worker**  

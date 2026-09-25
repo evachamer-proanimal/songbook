@@ -8,7 +8,7 @@ title: "Find The Cost Of Freedom"
 
 - [Recording](https://www.youtube.com/watch?v=Ycj-bQXWRrQ)
 
-<pre class="chords">Am  G  Em  D  C  D  G  Am</pre>
+<pre class="chords">Am G Em D C  D G Am</pre>
 
 Find the cost of freedom buried in the ground  
 Mother Earth will swallow you, lay your body down  

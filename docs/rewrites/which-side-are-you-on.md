@@ -4,13 +4,13 @@ title: "Which Side Are You On?"
 
 # Which Side Are You On?
 
-<pre class="chords">Em                 Bm
+<pre class="chords">Em         Bm
 Which side are you on?
-D                  Em
+D          Em
 Which side are you on?
-Em                 Bm
+Em         Bm
 Which side are you on?
-D                  Em
+D          Em
 Which side are you on?</pre>
 
 When you tell your children  

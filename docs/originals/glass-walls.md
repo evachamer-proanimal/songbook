@@ -11,123 +11,123 @@ title: "Glass Walls"
 === "Chords"
 
     <pre class="chords">(Verse 1)
-         B                                    A#m
+       B                    A#m
     Oh, we’re standing here again
-                                         G#m
+                        G#m
     Facing violence and despair
-                                            B
+                          B
     Our anger we no longer hide
-                                              B
+                           B
     Because we know we have to fight</pre>
 
-    <pre class="chords">                                 A#m
+    <pre class="chords">                  A#m
     To wipe away the ignorance
-                                        G#m
+                        G#m
     To shatter myths and traditions
-                                                            E
+                                   E
     And teach our neighbors what this is
-                                                   B
+                              B
     It’s torture, it's murder, it's injustice</pre>
 
     <pre class="chords">(Chorus)
-    B                                                      C#m
+    B                              C#m
     If we could tear down those brick walls
-                                                A#m
+                            A#m
     And replace them all with glass
-                                                                E
+                                     E
     We'd show the world what it's paying for
-                                                        B
+                                 B
     And make them leave it in the past</pre>
 
-    <pre class="chords">                                                 C#m
+    <pre class="chords">                           C#m
     And if we did the same with thoughts
-                                                      A#m
+                                A#m
     And listened to what's in our hearts
-                           E
+                 E
     We'd see the day
     N.C.
     When every animal is free</pre>
 
     <pre class="chords">(Pre-verse)
-    B  A#m G#m E</pre>
+    B A#m G#m E</pre>
 
     <pre class="chords">(Verse 2)
-    B                              A#m
+    B                 A#m
     No, we will not go away
-                                           G#m
+                         G#m
     Or hide compassion in shame
-                                                                    B
+                                       B
     We know what's right, we know what's wrong
-                                             B
+                           B
     This movement is for everyone</pre>
 
-    <pre class="chords">                                              A#m
+    <pre class="chords">                         A#m
     We all feel love, we all feel pain
-                                            G#m
+                          G#m
     We have to stop this othering
-                                                     E
+                               E
     We must learn how to be responsible
-                                                                                B
+                                              B
     And stop harming the ones who don't look like us</pre>
 
     <pre class="chords">(Chorus)
-    B                                                      C#m
+    B                              C#m
     If we could tear down those brick walls
-                                                A#m
+                            A#m
     And replace them all with glass
-                                                                E
+                                     E
     We'd show the world what it's paying for
-                                                        B
+                                 B
     And make them leave it in the past</pre>
 
-    <pre class="chords">                                                 C#m
+    <pre class="chords">                           C#m
     And if we did the same with thoughts
-                                                      A#m
+                                A#m
     And listened to what's in our hearts
-                           E
+                 E
     We'd see the day
-    N.C.                              B
+    N.C.                 B
     When every animal is free</pre>
 
-    <pre class="chords">B   F#  A#m  E
-    B   F#  A#m  E
+    <pre class="chords">B  F# A#m E
+    B  F# A#m E
     Free (x 8)</pre>
 
     <pre class="chords">(Chorus)
-    B                                                      C#m
+    B                              C#m
     If we could tear down those brick walls
-                                                A#m
+                            A#m
     And replace them all with glass
-                                                                E
+                                     E
     We'd show the world what it's paying for
-                                                        B
+                                 B
     And make them leave it in the past</pre>
 
-    <pre class="chords">                                                 C#m
+    <pre class="chords">                           C#m
     And if we did the same with thoughts
-                                                      A#m
+                                A#m
     And listened to what's in our hearts
-                           E
+                 E
     We'd see the day
-                                          B
+                         B
     When every animal is free</pre>
 
-    <pre class="chords">                                                      C#m
+    <pre class="chords">                              C#m
     If we could tear down those brick walls
-                                                A#m
+                            A#m
     And replace them all with glass
-                                                                E
+                                     E
     We'd show the world what it's paying for
-                                                        B
+                                 B
     And make them leave it in the past</pre>
 
-    <pre class="chords">                                             C#m
+    <pre class="chords">                         C#m
     And on the day we see the truth
-                                                  A#m
+                             A#m
     We will change the way we view
                 E (strummed once)
     The animals,
-    N.C.                          B
+    N.C.              B
     Let's build glass walls</pre>
 
     B  C\#m  A\#m  E (strummed once)  

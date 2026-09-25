@@ -80,16 +80,16 @@ Oooh, ooooh
 E7sus4
 Madison, Madison</pre>
 
-<pre class="chords">E7/G#           Cmaj7/E
+<pre class="chords">E7/G#         Cmaj7/E
 It broke my heart that she had to stay
-E7sus4                  C
+E7sus4            C
 I wish I could’ve saved you both
-    Dadd4
+  Dadd4
 But I want you to know
 That we’ll come back
-                C
+              C
 To give them freedom
-E                       Am7
+E                    Am7
 And they’ll have their way</pre>
 
 <pre class="chords">Am7

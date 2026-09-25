@@ -9,7 +9,7 @@ title: "Abattoir (A calf’s plea)"
 - [Recording](https://drive.google.com/open?id=0B659fY6sR4iHSU1yTVVmQ1Y4R05TNjR3NGVXN2llU0lBcUJz)
 
 <pre class="chords">Verse
-Am   C  G
+Am  C G
 I saw my mother get her throat slit open last night
 She was breathing heavy and her eyes were wide with fright</pre>
 

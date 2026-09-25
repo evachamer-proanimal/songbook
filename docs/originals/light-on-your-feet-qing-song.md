@@ -62,19 +62,19 @@ One day
 
 **Chorus 1**  
 
-<pre class="chords">C                                                       F</pre>
+<pre class="chords">C                                                F</pre>
 
 You’ll feel the light on your feet, you feel the grass underneath, your freedom  
 
-<pre class="chords">C                                                       F</pre>
+<pre class="chords">C                                                F</pre>
 
 You’ll throw your wings to the breeze, you’ll let your feathers flow free, your freedom  
 
-<pre class="chords">C                                                       F</pre>
+<pre class="chords">C                                                F</pre>
 
 You’ll feel the light on your feet, you feel the grass underneath, your freedom  
 
-<pre class="chords">C                                                       F</pre>
+<pre class="chords">C                                                F</pre>
 
 You’ll feel the wind and the breeze, you’ll feel the softness beneath, your freedom  
 
@@ -100,59 +100,59 @@ The light turns t’your barn, a soft voice can be heard
 
 **Pre-chorus 2**  
 
-<pre class="chords">                Em</pre>
+<pre class="chords">              Em</pre>
 
 And then the walls fall, the cage door opens  
 
-<pre class="chords">        C</pre>
+<pre class="chords">       C</pre>
 
 Their arms bring you out in the open  
 
-<pre class="chords">        Em                              C</pre>
+<pre class="chords">       Em                          C</pre>
 
 A drive to a place that you’ve never been  
 
 **Chorus 2**  
 
-<pre class="chords">C                                                       F</pre>
+<pre class="chords">C                                                F</pre>
 
 You feel the light on your feet, you feel the grass underneath, your freedom  
 
-<pre class="chords">C                                                       F</pre>
+<pre class="chords">C                                                F</pre>
 
 You’ll throw your wings to the breeze, you’ll let your feathers flow free, your freedom  
 
-<pre class="chords">C                                                       F</pre>
+<pre class="chords">C                                                F</pre>
 
 You’ll feel the light on your feet, you feel the grass underneath, your freedom  
 
-<pre class="chords">C                                                       F</pre>
+<pre class="chords">C                                                F</pre>
 
 You’ll feel the wind and the breeze, you’ll feel the softness beneath, your freedom  
 
 **Bridge**  
 
-<pre class="chords">Am              F</pre>
+<pre class="chords">Am            F</pre>
 
 I will rescue you  
 
-<pre class="chords">Am              F</pre>
+<pre class="chords">Am            F</pre>
 
 I will break on through  
 
-<pre class="chords">        Am</pre>
+<pre class="chords">       Am</pre>
 
 Because you and your friends they deserve to be well  
 
-<pre class="chords">        F</pre>
+<pre class="chords">       F</pre>
 
 And we’re breaking you free from this “cage-free” hell  
 
-<pre class="chords">        Am</pre>
+<pre class="chords">       Am</pre>
 
 And we’ll turn these dark places where no one should be  
 
-<pre class="chords">        F</pre>
+<pre class="chords">       F</pre>
 
 Into places of peace, of sanctuary  
 
@@ -160,19 +160,19 @@ Into places of peace, of sanctuary
 
 **Chorus 3 (ending)**  
 
-<pre class="chords">C                                                       F</pre>
+<pre class="chords">C                                                F</pre>
 
 (Where) You feel the light on your feet, you feel the grass underneath, your freedom  
 
-<pre class="chords">C                                                       F</pre>
+<pre class="chords">C                                                F</pre>
 
 You throw your wings to the breeze, you’ll let your feathers flow free, your freedom  
 
-<pre class="chords">C                                                       F</pre>
+<pre class="chords">C                                                F</pre>
 
 You feel the light on your feet, you feel the grass underneath, your freedom  
 
-<pre class="chords">C                                                       F</pre>
+<pre class="chords">C                                                F</pre>
 
 You feel the wind and the breeze, you’ll feel the softness beneath, your freedom  
 

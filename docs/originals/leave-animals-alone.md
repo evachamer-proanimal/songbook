@@ -14,7 +14,7 @@ Everyone eating animals but me
 And I get it man I've been there before
 Then I learned the animals we eat once had a life that to them was completely unique
 A sentient being punished by us, whose only crime was being born of the wrong
-Am   C
+Am  C
 blood</pre>
 
 <pre class="chords">CHORUS

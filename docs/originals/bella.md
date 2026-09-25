@@ -6,13 +6,13 @@ title: "Bella"
 
 *Eva Hamer*
 
-<pre class="chords">F#m7                                 Bm7
+<pre class="chords">F#m7                           Bm7
 I would have named you Bella If you were still with me
-Em7                                             A7
+Em7                                       A7
 I would have found a place for you and your entire family
-F#m7                                  B7
+F#m7                           B7
 I cried so when I left you in the dirt and in the dark
-Em7                                             A7
+Em7                                       A7
 Forgive me that I could not spare you couldn’t set you free</pre>
 
 I would have named you Bella, I would have kept you safe  
@@ -23,13 +23,13 @@ Although they knew you loved them they never knew your embrace
 <pre class="chords">Dmaj7/D-F#
 Bella I’m sorry
 Bella we promise
-Dmaj7/F#             A
+Dmaj7/F#         A
 Your daughter’s happy now
-                        Dmaj7/D-F#
+            Dmaj7/D-F#
 She’s growing up free
-                A
+              A
 Madison’s happy now
-                  Dmaj7/D-F#
+          Dmaj7/D-F#
 She’s safe with me</pre>
 
 You would have left together, but there were five seats in the car  

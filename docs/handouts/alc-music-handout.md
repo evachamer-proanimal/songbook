@@ -4,189 +4,108 @@ title: "ALC Music Handout"
 
 # ALC Music Handout
 
+- [Recording](http://bit.ly/FirstSongYoullEverHear)
+
 === "Chords"
 
-    The First Song
-
-    http://bit.ly/FirstSongYoullEverHear
-
-    Em Asus2
-
+    <pre class="chords">Em                            Asus2
     I’ll sing you the first song that you’ll ever hear
-
-    Em Asus2
-
+    Em                         Asus2
     I’ll give you the first gentle touch
-
-    Em Asus2
-
+    Em                     Asus2
     I’ll bring you to safety, whatever it takes me
+    Em                               B7
+    Through farmlands and wire and brush</pre>
 
-    Em B7
-
-    Through farmlands and wire and brush
-
-    B7 Em
-
+    <pre class="chords">B7                Em
     What brought you here
-
-    Em Asus2
-
+    Em        Asus2
     If it’s only money
-
-    B7 Em
-
+    B7                                                              Em
     Then all the world’s savings aren’t worth who I’ll save from this place
-
-    Em Asus2
-
+    Em                      Asus2
     Where the floor here is bloody
+    B7                                                       Em
+    The future’s ashamed of the countless who came to this fate</pre>
 
-    B7 Em
-
-    The future’s ashamed of the countless who came to this fate
-
-    Em Asus2
-
+    <pre class="chords">Em                              Asus2
     I’ll give you the first kind words you’ve ever known
-
     I’ll witness the pain in your eyes
-
     I’ll tell them your story throughout all my life
-
-    Em B7
-
+    Em                               B7
     I see you I’m sorry I try
+    Em             B7  Em Asus2 Em
+    I see you I’m sorry I try</pre>
 
-    Em B7 Em Asus2 Em
+    All They Want is Freedom  
+    Jason Oliver  
+    http://bit.ly/AllTheyWantisFreedom  
 
-    I see you I’m sorry I try
-
-    All They Want is Freedom
-
-    Jason Oliver
-
-    http://bit.ly/AllTheyWantisFreedom
-
-    E F#m
-
+    <pre class="chords">E                  F#m
     This little boy wants to be with his mommy
-
-    E F#m
-
+    E                    F#m
     He feels pain just like you and I
-
     G#m
-
     So why do we deny him
-
     F#m
-
     Love and kindness
-
     G#m
-
     Why do we brutalize him
-
     F#m
+    This must be madness</pre>
 
-    This must be madness
-
-    E Bm A G E
-
+    <pre class="chords">E            Bm            A    G E
     All he wants is freedom freedom freedom
-
     He’s crying out for freedom freedom freedom
-
     He’s begging us for freedom freedom freedom
+    Don’t you believe in freedom freedom freedom</pre>
 
-    Don’t you believe in freedom freedom freedom
-
-    E F#m
-
+    <pre class="chords">E                  F#m
     This little girl wants to be with her family
-
-    E F#m
-
+    E                 F#m
     She feels joy just like you and I
-
     G#m
-
     So why do we deny her
-
     F#m
-
     Love and kindness
-
     G#m
-
     Why do we brutalize her
-
     F#m
+    This must be madness</pre>
 
-    This must be madness
-
-    E Bm A A/E
-
+    <pre class="chords">E             Bm            A      A/E
     All she wants is freedom freedom freedom
-
     She’s crying out for freedom freedom freedom
-
     She’s begging us for freedom freedom freedom
+    I know you believe in freedom freedom freedom</pre>
 
-    I know you believe in freedom freedom freedom
-
-    E F#m
-
+    <pre class="chords">E                  F#m
     Every animal wants to be happy
-
-    E F#m
-
+    E                  F#m
     To live in peace with their family
-
-    G#m
-
+     G#m
     Oh why do we deny them
-
     F#m
-
     Love and kindness
-
     G#m
-
     Why do we brutalize them
-
     F#m
-
     This must be madness
-
-    E Bm A A/E
-
+    E            Bm            A      A/E
     All they want is freedom freedom freedom
-
-    E Bm A A/E
-
+    E                 Bm                 A      A/E
     They’re crying out for freedom freedom freedom
-
-    E Bm A A/E
-
+    E                  Bm                A      A/E
     They’re begging us for freedom freedom freedom
-
-    E Bm A A/E
-
+    E                 Bm            A      A/E
     I know we believe in freedom freedom freedom
-
-    E Bm A A/E
-
+    E                    Bm            A      A/E
     When will we give them freedom freedom freedom
+    E                   Bm            A
+    When will we give them freedom freedom freedom</pre>
 
-    E Bm A
-
-    When will we give them freedom freedom freedom
-
-    It Isn’t Nice
-
-    Malvina Reynolds
+    It Isn’t Nice  
+    Malvina Reynolds  
 
     <table>
     <colgroup>
@@ -248,103 +167,64 @@ title: "ALC Music Handout"
     </tbody>
     </table>
 
-    Liberation for Us All
+    Liberation for Us All  
+    Dayton Martindale  
+    http://bit.ly/LiberationForUsAll  
 
-    Dayton Martindale
-
-    http://bit.ly/LiberationForUsAll
-
-    E
-
+    <pre class="chords">E
     Liberation for the animals
-
-    A E
-
+    A                    E
     Liberation for the animals
-
     E
-
     Liberation for the animals
+    A          B7   E
+    Liberation for us all</pre>
 
-    A B7 E
-
-    Liberation for us all
-
-    E
-
+    <pre class="chords">E
     Every farm and lab and zoo and every circus that you see
-
-    A E
-
+    A                                    E
     Every tank and every cage a sign of human tyranny
-
     E
-
     But we can bring about a world where every animal is free
+    A             B7 E
+    Liberation for us all</pre>
 
-    A B7 E
+    Every bleating of the lamb and every crow and every cry  
+    Hear the pleading of the creature who would never choose to die  
+    We can learn again to love them they can learn again to fly  
+    Liberation for us all  
 
-    Liberation for us all
+    We have killed them by the billions burned the forests where they roam  
+    We have taken and we’ve taken what was never ours to own  
+    We will make the Earth  a space that shared to all who call it home  
+    Liberation for us all  
+    It is they who built the studies where we profit and we learn  
+    On their backs and in their bodies we poisoned cut and burned  
+    But never do we give them back the wonders they have earned  
+    Liberation for us all  
 
-    Every bleating of the lamb and every crow and every cry
+    We’ve netted them and hooked them we’ve harpooned them till they bled  
+    Turned the water into acid left the oceans all for dead  
+    They say Jesus passed the fishes why not only loaves of bread  
+    Liberation for us all  
 
-    Hear the pleading of the creature who would never choose to die
+    I have eaten of their bodies but I never will again  
+    Now I've been to sanctuaries and I've met pigs and hens  
+    But all will be forgiven when and only when  
+    Liberation for us all  
 
-    We can learn again to love them they can learn again to fly
+    How can I convince you so that your heart of stone will melt  
+    we have killed them for their skins and we have killed them for their pelt  
+    They are more than just a wallet they are more than just a belt  
+    Liberation for us all  
 
-    Liberation for us all
+    They were free and they were wild before we painted our first cave  
+    And I know some will still be here when we’re lying in our graves  
+    But for now that while we’re living we’ve got animals to save  
+    Liberation for us all  
 
-    We have killed them by the billions burned the forests where they roam
-
-    We have taken and we’ve taken what was never ours to own
-
-    We will make the Earth a space that shared to all who call it home
-
-    Liberation for us all
-
-    It is they who built the studies where we profit and we learn
-
-    On their backs and in their bodies we poisoned cut and burned
-
-    But never do we give them back the wonders they have earned
-
-    Liberation for us all
-
-    We’ve netted them and hooked them we’ve harpooned them till they bled
-
-    Turned the water into acid left the oceans all for dead
-
-    They say Jesus passed the fishes why not only loaves of bread
-
-    Liberation for us all
-
-    I have eaten of their bodies but I never will again
-
-    Now I've been to sanctuaries and I've met pigs and hens
-
-    But all will be forgiven when and only when
-
-    Liberation for us all
-
-    How can I convince you so that your heart of stone will melt
-
-    we have killed them for their skins and we have killed them for their pelt
-
-    They are more than just a wallet they are more than just a belt
-
-    Liberation for us all
-
-    They were free and they were wild before we painted our first cave
-
-    And I know some will still be here when we’re lying in our graves
-
-    But for now that while we’re living we’ve got animals to save
-
-    Liberation for us all
-
-    They Tried to Bury Us
-
-    http://bit.ly/theytriedtoburyus
+    They Tried to Bury Us  
+    http://bit.ly/theytriedtoburyus  
 
     <table>
     <colgroup>
@@ -431,73 +311,45 @@ title: "ALC Music Handout"
     </tbody>
     </table>
 
-    Never Turning Back
+    <pre class="chords">Never Turning Back
+    Pat Humphries- 1985
+                  C
+    We're gonna <strong>keep on walking forward</strong>
+                    G
+    <strong>Keep on walking forward</strong>
+    C               F
+    <strong>Keep on walking forward</strong>
+    F                       C    G      C
+    Never turning back, never turning back</pre>
 
-    <span class="mark">Pat Humphries- 1985</span>
+    (replace bold lyrics on repeats)  
+    **Keep on walking proudly**  
+    **Keep on singing loudly**  
+    **Keep on loving boldly**  
+    **Keep on growing stronger**  
+    **Free them from their cages**  
+    **Work for liberation**  
 
-    <span class="mark">C</span>
+    Ain’t Gonna Let Nobody Turn Me Around  
+    Civil Rights Song  
 
-    We're gonna **keep on walking forward**
+    <pre class="chords">Am
+    Ain't gonna let <strong>nobody</strong> turn me around
+    E7                      Am
+    Turn me around, turn me around
+    Ain't gonna let nobody turn me around
+                   E7
+    I'm gonna keep on a-walkin', keep on a-talkin'
+                                          Am
+    Gonna build a brand new world</pre>
 
-    G
+    (orig. “Marchin' down to freedom land”)  
 
-    **Keep on walking forward**
-
-    C F
-
-    **Keep on walking forward**
-
-    F C G C
-
-    Never turning back, never turning back
-
-    (replace bold lyrics on repeats)
-
-    **Keep on walking proudly**
-
-    **Keep on singing loudly**
-
-    **Keep on loving boldly**
-
-    **Keep on growing stronger**
-
-    **Free them from their cages**
-
-    **Work for liberation**
-
-    Ain’t Gonna Let Nobody Turn Me Around
-
-    Civil Rights Song
-
-    Am
-
-    <span class="mark">Ain't gonna let **nobody** turn me around</span>
-
-    <span class="mark">E7 Am</span>
-
-    <span class="mark">Turn me around, turn me around</span>
-
-    <span class="mark">Ain't gonna let nobody turn me around</span>
-
-    <span class="mark">E7</span>
-
-    <span class="mark">I'm gonna keep on a-walkin', keep on a-talkin'</span>
-
-    <span class="mark">Am</span>
-
-    <span class="mark">Gonna build a brand new world</span>
-
-    <span class="mark">(orig. “Marchin' down to freedom land”)</span>
-
-    <span class="mark">(Replace bolded words on repeats)</span>
-
-    **<span class="mark">No jail house</span>**
-
-    **<span class="mark">No police</span>**
-
-    **<span class="mark">This president</span>**
-
-    **<span class="mark">The FBI</span>**
+    (Replace bolded words on repeats)  
+    **No jail house**  
+    **No police**  
+    **This president**  
+    **The FBI**  
 
     <table>
     <colgroup>
@@ -516,9 +368,8 @@ title: "ALC Music Handout"
     </tbody>
     </table>
 
-    ﻿Hey There Dahlia
-
-    http://bit.ly/2kTcSej
+    Hey There Dahlia  
+    http://bit.ly/2kTcSej  
 
     <table>
     <colgroup>
@@ -635,178 +486,106 @@ title: "ALC Music Handout"
     </tbody>
     </table>
 
-    <span class="mark">Until Every Animal is Free</span>
+    Until Every Animal is Free  
+    Eva Hamer  
+    https://www.youtube.com/watch?v=4rusLk3zbLo  
 
-    <span class="mark">Eva Hamer</span>
+    <pre class="chords">CHORUS
+    D               G    D
+    Liberation, I need liberation
+    D          A         D
+    Until every animal is free
+    D               G    D
+    Liberation, I demand liberation
+    D          A         D
+    Until every animal is free</pre>
 
-    <span class="mark">https://www.youtube.com/watch?v=4rusLk3zbLo</span>
+    <pre class="chords">BRIDGE
+    D                G     D
+    I’m just asking for compassion
+    D               A               D
+    for someone who doesn’t look like you (2. me)
+    D                    G     D
+    If you knew them like I know them
+    D         A              D
+    You’d be asking too (2. fighting till they’re free)</pre>
 
-    <span class="mark">CHORUS</span>
+    CHORUS  
+    V1  
+    I’m gonna raise my voice for those who don’t have a choice  
+    Until every animal is free  
+    (repeat)  
 
-    <span class="mark">D G D</span>
+    CHORUS  
+    BRIDGE 2  
+    CHORUS  
 
-    <span class="mark">Liberation, I need liberation</span>
-
-    <span class="mark">D A D</span>
-
-    <span class="mark">Until every animal is free</span>
-
-    <span class="mark">D G D</span>
-
-    <span class="mark">Liberation, I demand liberation</span>
-
-    <span class="mark">D A D</span>
-
-    <span class="mark">Until every animal is free</span>
-
-    <span class="mark">BRIDGE</span>
-
-    <span class="mark">D G D</span>
-
-    <span class="mark">I’m just asking for compassion</span>
-
-    <span class="mark">D A D</span>
-
-    <span class="mark">for someone who doesn’t look like you (2. me)</span>
-
-    <span class="mark">D G D</span>
-
-    <span class="mark">If you knew them like I know them</span>
-
-    <span class="mark">D A D</span>
-
-    <span class="mark">You’d be asking too (2. fighting till they’re free)</span>
-
-    <span class="mark">CHORUS</span>
-
-    <span class="mark">V1</span>
-
-    <span class="mark">I’m gonna raise my voice for those who don’t have a choice</span>
-
-    <span class="mark">Until every animal is free</span>
-
-    <span class="mark">(repeat)</span>
-
-    <span class="mark">CHORUS</span>
-
-    <span class="mark">BRIDGE 2</span>
-
-    <span class="mark">CHORUS</span>
-
-    <span class="mark">V2</span>
-
-    <span class="mark">I won't buy their lies animals don't want to die</span>
-
-    <span class="mark">Until every animal is free</span>
-
-    <span class="mark">(repeat)</span>
-
-    CHORUS x 2
-
+    V2  
+    I won't buy their lies animals don't want  to die  
+    Until every animal is free  
+    (repeat)  
+    CHORUS x 2  
 
 === "Lyrics"
 
-    The First Song
+    I’ll sing you the first song that you’ll ever hear  
+    I’ll give you the first gentle touch  
+    I’ll bring you to safety, whatever it takes me  
+    Through farmlands and wire and brush  
 
-    http://bit.ly/FirstSongYoullEverHear
+    What brought you here  
+    If it’s only money  
+    Then all the world’s savings aren’t worth who I’ll save from this place  
+    Where the floor here is bloody  
+    The future’s ashamed of the countless who came to this fate  
 
-    I’ll sing you the first song that you’ll ever hear
+    I’ll give you the first kind words you’ve ever known  
+    I’ll witness the pain in your eyes  
+    I’ll tell them your story throughout all my life  
+    I see you I’m sorry I try  
+    I see you I’m sorry I try  
 
-    I’ll give you the first gentle touch
+    All They Want is Freedom- Jason Oliver  http://bit.ly/AllTheyWantisFreedom  
 
-    I’ll bring you to safety, whatever it takes me
+    This little boy wants to be with his mommy  
+    He feels pain just like you and I  
+    So why do we deny him  
+    Love and kindness  
+    Why do we brutalize him  
+    This must be madness  
 
-    Through farmlands and wire and brush
+    All he wants is freedom freedom freedom  
+    He’s crying out for freedom freedom freedom  
+    He’s begging us for freedom freedom freedom  
+    Don’t you believe in freedom freedom freedom  
 
-    What brought you here
+    This little girl wants to be with her family  
+    She feels joy just like you and I  
+    So why do we deny her  
+    Love and kindness  
+    Why do we brutalize her  
+    This must be madness  
 
-    If it’s only money
+    All she wants is freedom freedom freedom  
+    She’s crying out for freedom freedom freedom  
+    She’s begging us for freedom freedom freedom  
+    I know you believe in freedom freedom freedom  
 
-    Then all the world’s savings aren’t worth who I’ll save from this place
+    Every animal wants to be happy  
+    To live in peace with their family  
+    Oh why do we deny them  
+    Love and kindness  
+    Why do we brutalize them  
+    This must be madness  
 
-    Where the floor here is bloody
-
-    The future’s ashamed of the countless who came to this fate
-
-    I’ll give you the first kind words you’ve ever known
-
-    I’ll witness the pain in your eyes
-
-    I’ll tell them your story throughout all my life
-
-    I see you I’m sorry I try
-
-    I see you I’m sorry I try
-
-    All They Want is Freedom- Jason Oliver http://bit.ly/AllTheyWantisFreedom
-
-    This little boy wants to be with his mommy
-
-    He feels pain just like you and I
-
-    So why do we deny him
-
-    Love and kindness
-
-    Why do we brutalize him
-
-    This must be madness
-
-    All he wants is freedom freedom freedom
-
-    He’s crying out for freedom freedom freedom
-
-    He’s begging us for freedom freedom freedom
-
-    Don’t you believe in freedom freedom freedom
-
-    This little girl wants to be with her family
-
-    She feels joy just like you and I
-
-    So why do we deny her
-
-    Love and kindness
-
-    Why do we brutalize her
-
-    This must be madness
-
-    All she wants is freedom freedom freedom
-
-    She’s crying out for freedom freedom freedom
-
-    She’s begging us for freedom freedom freedom
-
-    I know you believe in freedom freedom freedom
-
-    Every animal wants to be happy
-
-    To live in peace with their family
-
-    Oh why do we deny them
-
-    Love and kindness
-
-    Why do we brutalize them
-
-    This must be madness
-
-    All they want is freedom freedom freedom
-
-    They’re crying out for freedom freedom freedom
-
-    They’re begging us for freedom freedom freedom
-
-    I know we believe in freedom freedom freedom
-
-    When will we give them freedom freedom freedom
-
-    When will we give them freedom freedom freedom
-
-    It Isn’t Nice
-
-    Malvina Reynolds
+    All they want is freedom freedom freedom  
+    They’re crying out for freedom freedom freedom  
+    They’re begging us for freedom freedom freedom  
+    I know we believe in freedom freedom freedom  
+    When will we give them freedom freedom freedom  
+    When will we give them freedom freedom freedom  
+    It Isn’t Nice  
+    Malvina Reynolds  
 
     <table>
     <colgroup>
@@ -868,87 +647,56 @@ title: "ALC Music Handout"
     </tbody>
     </table>
 
-    Liberation for Us All
+    Liberation for Us All  
+    Dayton Martindale  
+    http://bit.ly/LiberationForUsAll  
 
-    Dayton Martindale
+    Liberation for the animals  
+    Liberation for the animals  
+    Liberation for the animals  
+    Liberation for us all  
 
-    http://bit.ly/LiberationForUsAll
+    Every farm and lab and zoo and every circus that you see  
+    Every tank and every cage a sign of human tyranny  
+    But we can bring about a world where every animal is free  
+    Liberation for us all  
 
-    Liberation for the animals
+    Every bleating of the lamb and every crow and every cry  
+    Hear the pleading of the creature who would never choose to die  
+    We can learn again to love them they can learn again to fly  
+    Liberation for us all  
 
-    Liberation for the animals
+    We have killed them by the billions burned the forests where they roam  
+    We have taken and we’ve taken what was never ours to own  
+    We will make the Earth  a space that shared to all who call it home  
+    Liberation for us all  
+    It is they who built the studies where we profit and we learn  
+    On their backs and in their bodies we poisoned cut and burned  
+    But never do we give them back the wonders they have earned  
+    Liberation for us all  
 
-    Liberation for the animals
+    We’ve netted them and hooked them we’ve harpooned them till they bled  
+    Turned the water into acid left the oceans all for dead  
+    They say Jesus passed the fishes why not only loaves of bread  
+    Liberation for us all  
 
-    Liberation for us all
+    I have eaten of their bodies but I never will again  
+    Now I've been to sanctuaries and I've met pigs and hens  
+    But all will be forgiven when and only when  
+    Liberation for us all  
 
-    Every farm and lab and zoo and every circus that you see
+    How can I convince you so that your heart of stone will melt  
+    we have killed them for their skins and we have killed them for their pelt  
+    They are more than just a wallet they are more than just a belt  
+    Liberation for us all  
 
-    Every tank and every cage a sign of human tyranny
+    They were free and they were wild before we painted our first cave  
+    And I know some will still be here when we’re lying in our graves  
+    But for now that while we’re living we’ve got animals to save  
+    Liberation for us all  
 
-    But we can bring about a world where every animal is free
-
-    Liberation for us all
-
-    Every bleating of the lamb and every crow and every cry
-
-    Hear the pleading of the creature who would never choose to die
-
-    We can learn again to love them they can learn again to fly
-
-    Liberation for us all
-
-    We have killed them by the billions burned the forests where they roam
-
-    We have taken and we’ve taken what was never ours to own
-
-    We will make the Earth a space that shared to all who call it home
-
-    Liberation for us all
-
-    It is they who built the studies where we profit and we learn
-
-    On their backs and in their bodies we poisoned cut and burned
-
-    But never do we give them back the wonders they have earned
-
-    Liberation for us all
-
-    We’ve netted them and hooked them we’ve harpooned them till they bled
-
-    Turned the water into acid left the oceans all for dead
-
-    They say Jesus passed the fishes why not only loaves of bread
-
-    Liberation for us all
-
-    I have eaten of their bodies but I never will again
-
-    Now I've been to sanctuaries and I've met pigs and hens
-
-    But all will be forgiven when and only when
-
-    Liberation for us all
-
-    How can I convince you so that your heart of stone will melt
-
-    we have killed them for their skins and we have killed them for their pelt
-
-    They are more than just a wallet they are more than just a belt
-
-    Liberation for us all
-
-    They were free and they were wild before we painted our first cave
-
-    And I know some will still be here when we’re lying in our graves
-
-    But for now that while we’re living we’ve got animals to save
-
-    Liberation for us all
-
-    They Tried to Bury Us
-
-    http://bit.ly/theytriedtoburyus
+    They Tried to Bury Us  
+    http://bit.ly/theytriedtoburyus  
 
     <table>
     <colgroup>
@@ -1032,59 +780,38 @@ title: "ALC Music Handout"
     </tbody>
     </table>
 
-    Never Turning Back
+    Never Turning Back  
+    Pat Humphries- 1985  
 
-    <span class="mark">Pat Humphries- 1985</span>
+    We're gonna **keep on walking forward**  
+    **Keep on walking forward**  
+    **Keep on walking forward**  
+    Never turning back, never turning back  
 
-    <span class="mark"></span>
+    (replace bold lyrics on repeats)  
+    **Keep on walking proudly**  
+    **Keep on singing loudly**  
+    **Keep on loving boldly**  
+    **Keep on growing stronger**  
+    **Free them from their cages**  
+    **Work for liberation**  
 
-    We're gonna **keep on walking forward**
+    Ain’t Gonna Let Nobody Turn Me Around  
+    Civil Rights Song  
 
-    **Keep on walking forward**
+    Ain't gonna let **nobody** turn me around  
+    Turn me around, turn me around  
+    Ain't gonna let nobody turn me around  
+    I'm gonna keep on a-walkin', keep on a-talkin'  
+    Gonna build a brand new world  
 
-    **Keep on walking forward**
+    (orig. “Marchin' down to freedom land”)  
 
-    Never turning back, never turning back
-
-    (replace bold lyrics on repeats)
-
-    **Keep on walking proudly**
-
-    **Keep on singing loudly**
-
-    **Keep on loving boldly**
-
-    **Keep on growing stronger**
-
-    **Free them from their cages**
-
-    **Work for liberation**
-
-    Ain’t Gonna Let Nobody Turn Me Around
-
-    Civil Rights Song
-
-    <span class="mark">Ain't gonna let **nobody** turn me around</span>
-
-    <span class="mark">Turn me around, turn me around</span>
-
-    <span class="mark">Ain't gonna let nobody turn me around</span>
-
-    <span class="mark">I'm gonna keep on a-walkin', keep on a-talkin'</span>
-
-    <span class="mark">Gonna build a brand new world</span>
-
-    <span class="mark">(orig. “Marchin' down to freedom land”)</span>
-
-    <span class="mark">(Replace bolded words on repeats)</span>
-
-    **<span class="mark">No jail house</span>**
-
-    **<span class="mark">No police</span>**
-
-    **<span class="mark">This president</span>**
-
-    **<span class="mark">The FBI</span>**
+    (Replace bolded words on repeats)  
+    **No jail house**  
+    **No police**  
+    **This president**  
+    **The FBI**  
 
     <table>
     <colgroup>
@@ -1103,9 +830,8 @@ title: "ALC Music Handout"
     </tbody>
     </table>
 
-    Hey There Dahlia
-
-    http://bit.ly/2kTcSej
+    Hey There Dahlia  
+    http://bit.ly/2kTcSej  
 
     <table>
     <colgroup>
@@ -1172,58 +898,40 @@ title: "ALC Music Handout"
     </tbody>
     </table>
 
-    <span class="mark">Until Every Animal is Free</span>
+    Until Every Animal is Free  
+    Eva Hamer  
+    https://www.youtube.com/watch?v=4rusLk3zbLo  
 
-    <span class="mark">Eva Hamer</span>
+    CHORUS  
+    **Liberation, I need liberation**  
+    **Until every animal is free**  
+    **Liberation, I demand liberation**  
+    **Until every animal is free**  
 
-    <span class="mark">https://www.youtube.com/watch?v=4rusLk3zbLo</span>
+    BRIDGE  
+    I’m just asking for compassion  
+    for someone who doesn’t look like you  
+    If you knew them like I know them  
+    You’d be asking too  
 
-    <span class="mark">CHORUS</span>
+    CHORUS  
 
-    **<span class="mark">Liberation, I need liberation</span>**
+    I’m gonna raise my voice for those who don’t have a choice  
+    Until every animal is free  
 
-    **<span class="mark">Until every animal is free</span>**
+    CHORUS  
 
-    **<span class="mark">Liberation, I demand liberation</span>**
+    I’m just asking for compassion  
+    for someone who doesn’t look like me  
+    If you knew them like I know them  
+    You’d be asking  fighting till they’re free  
 
-    **<span class="mark">Until every animal is free</span>**
+    CHORUS  
 
-    <span class="mark">BRIDGE</span>
+    I won't buy their lies animals don't want  to die  
+    Until every animal is free  
 
-    <span class="mark">I’m just asking for compassion</span>
-
-    <span class="mark">for someone who doesn’t look like you</span>
-
-    <span class="mark">If you knew them like I know them</span>
-
-    <span class="mark">You’d be asking too</span>
-
-    <span class="mark">CHORUS</span>
-
-    <span class="mark"></span>
-
-    <span class="mark">I’m gonna raise my voice for those who don’t have a choice</span>
-
-    <span class="mark">Until every animal is free</span>
-
-    <span class="mark">CHORUS</span>
-
-    <span class="mark">I’m just asking for compassion</span>
-
-    <span class="mark">for someone who doesn’t look like me</span>
-
-    <span class="mark">If you knew them like I know them</span>
-
-    <span class="mark">You’d be asking fighting till they’re free</span>
-
-    <span class="mark">CHORUS</span>
-
-    <span class="mark">I won't buy their lies animals don't want to die</span>
-
-    <span class="mark">Until every animal is free</span>
-
-    CHORUS x 2
-
+    CHORUS x 2  
 
 
 <!-- sources: gdoc:1iiGvNS7mpgbXBgbCJzwkofU-uwWhhI1AHBJUNlDFFwE; gdoc:1_x7lJzeijlVfF6SS3NWT2WYUAp3lA_oDwoeBrFQv-Fw -->

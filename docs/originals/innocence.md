@@ -7,18 +7,18 @@ title: "Innocence"
 *Eva Hamer*
 
 <pre class="chords">CHORUS
-C                                               G               G7
+C                                         G             G7
 In your eyes, in your eyes, in your eyes is innocence
-                                              G         C
+                                      G          C
 You are guilty of no crime, so you will die with innocence</pre>
 
-<pre class="chords">C                                      C7
+<pre class="chords">C                               C7
 You heard bad news spreading slowly
-F                              C
+F                        C
 But out here it’s clear as day
-                C                    Em
+              C                Em
 Though no war time count will take you
-F       G7           C
+F      G7        C
 We will lose you anyway</pre>
 
 CHORUS  

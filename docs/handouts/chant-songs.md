@@ -38,34 +38,26 @@ title: "Chant Songs"
 </tbody>
 </table>
 
-Never Turning Back
+Never Turning Back  
+Pat Humphries- 1985  
 
-<span class="mark">Pat Humphries- 1985</span>
+We're gonna **keep on walking forward**  
+**Keep on walking forward**  
+**Keep on walking forward**  
+Never turning back, never turning back  
 
-<span class="mark"></span>
+**Keep on walking proudly/ Keep on singing loudly /Keep on loving boldly/Keep on growing stronger/Rescue every animal/ Free them from their cages/Work for liberation**  
+The Tide is Rising  
 
-We're gonna **keep on walking forward**
+**The tide is rising**, and so are we\! (3x)  
+This is where we are called to be  
+This is where we are called to be  
 
-**Keep on walking forward**
-
-**Keep on walking forward**
-
-Never turning back, never turning back
-
-**Keep on walking proudly/ Keep on singing loudly /Keep on loving boldly/Keep on growing stronger/Rescue every animal/ Free them from their cages/Work for liberation**
-
-The Tide is Rising
-
-**The tide is rising**, and so are we! (3x)\
-This is where we are called to be\
-This is where we are called to be
-
-**The task is mighty…\
-The land is holy…\
-The storm is raging…\
-The sun is shining…\
-The world is ready...**
-
+**The task is mighty…**  
+**The land is holy…**  
+**The storm is raging…**  
+**The sun is shining…**  
+**The world is ready...**  
 
 
 <!-- sources: gdoc:11RboJvlgrVy5YhS-w5XbfP_T_YZYaqs6SAWV4w8XKz0 -->

@@ -170,6 +170,11 @@ Hebrew translation "and you shall love your neighbor as you love yourself" (Vayi
 </tbody>
 </table>
 
+    L’arecha (l'arecha)  
+    K’mocha (k'mocha)  
+    K’mocha (k'mocha)     Cease fire now (echo) (x4)  \*וְאָֽהַבְתָּ֥ לְרֵעֲךָ֖ כָּמ֑וֹךָ  
+Hebrew translation "and you shall love your    neighbor as you love yourself" (Vayikra 19:18)* \[To the tune of "Little Song"- by Sol Weiss with added words from Ilana Lerman, Sol Weiss, and many voices in the Ceasefire movement\] |  
+
 <table style="width:54%;">
 <colgroup>
 <col style="width: 53%" />
@@ -372,6 +377,13 @@ To bring, to bring peace to this land</p></td>
 </tbody>
 </table>
 
+May this body be a bridge for the healing of this land  
+May the river flow through us cleansing greed from our hands May this body be a bridge for the healing of this land  
+May the river flow through us cleansing grief from our hands Part 2:  
+We are, we are born from the water  
+We are, we are made from the land Teach us, teach us, oh Great Mother  
+To bring, to bring peace to this land |  
+
 <table style="width:50%;">
 <colgroup>
 <col style="width: 50%" />
@@ -466,8 +478,6 @@ Is the same sound as the blood in your body as it moves across your bones</mark>
 </tbody>
 </table>
 
-> *~ GRIEF SONGS ~*
-
 <table>
 <tbody>
 <tr>
@@ -484,6 +494,11 @@ Is the same sound as the blood in your body as it moves across your bones</mark>
 </tr>
 </tbody>
 </table>
+
+Put your roots down, put your feet on the ground  
+Can you hear what she says when you listen? Are you listening? Gaza’s crying   Part 2:  
+'Cause the sound of the river as it moves across the stone  
+Is the same sound as the blood in your body as it moves across your bones Are you listening? Gaza’s crying  |  
 
 <table style="width:50%;">
 <colgroup>
@@ -513,6 +528,8 @@ Is the same sound as the blood in your body as it moves across your bones</mark>
 </tr>
 </tbody>
 </table>
+
+                    *\~ GRIEF SONGS \~*  
 
 <table style="width:50%;">
 <colgroup>
@@ -717,6 +734,20 @@ Is the same sound as the blood in your body as it moves across your bones</mark>
 </tbody>
 </table>
 
+…feel a little more connected today  
+…get a little more grounded today  
+…be a little more free today  
+…\_\_\_ a little more \_\_\_\_ today |  
+| :---- |
+
+| 12\.  Grief \- [Sarina Partridge](https://sarinapartridge.com/)   – [Recording](https://sarinapartridge.bandcamp.com/track/grief)  Part 1: Grief  / Moving through me / Let my body / Feel the waves of love, and (x2)           Part 2:  Let me feel it all / Let me feel it all / Grief, grief and love / Let me feel it all / Let me feel it all    Part 3:  And all this grief, Give it to the water, Let it go (x2) Let it go        Part 4: Heal this heart with a blessing / In motion / Carry it to the ocean / To the ocean       Let it go, let it go  |
+| :---- |
+
+| 13\. To Know The Dark Music: Katie Hicks; Lyrics: Wendell Berry – [Recording](https://m.soundcloud.com/ary-solomon/to-know-the-dark-music-katie-hicks-lyrics-wendell-berry?ref=sms&p=i&c=0&si=D27CEC3AEF1B49509D54BC0747EB33B3&utm_source=sms&utm_medium=message&utm_campaign=social_sharing)  To go in the dark with a light is to know the light.  To know the dark, go dark, go without sight.  And find that the dark, too, blooms and sings,  And is traveled by dark feet and dark wings. |
+| :---- |
+
+| 14\. Grandmother Song – [Recording](https://drive.google.com/file/d/1ygO0ZxUa9xYeqjDfVuNu4_UzmeGCPlMk/view?usp=sharing)  \- [Longer version here](https://docs.google.com/document/d/15GX6DT9q6gBmz4xcLyRBRVUUU-iGO4_AtF8DHAlpKiI/edit)  I hear the voice of my ancestors calling I hear the voice of my ancestors song   (x2)   Singing wake up, wake up Child wake up, wake up Listen, Listen  (x2)  Repeat both verses indefinitely; layer in a round *Adapted from Grandmother Song from unknown origins* |
+| :---- |
 
 
 <!-- sources: gdoc:1l1Brh4jEHrjhr93wQV8lBEUk10YuS_CpoeyTr1G2c8c -->

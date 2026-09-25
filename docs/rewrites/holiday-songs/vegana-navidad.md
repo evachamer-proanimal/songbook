@@ -6,26 +6,26 @@ title: "Vegana Navidad"
 
 *Jason Oliver*
 
-<pre class="chords">G          C    D
+<pre class="chords">G     C   D
 Vegana Navidad,
-D          G
+D     G
 Vegana Navidad,
-G          C            D            G
+G     C       D       G
 Vegana Navidad, próspero ano y felicidad.
-G          C    D
+G     C   D
 Vegana Navidad,
-D          G
+D     G
 Vegana Navidad,
-G          C            D            G
+G     C       D       G
 Vegana Navidad, próspero ano y felicidad.</pre>
 
-<pre class="chords">G                  C
+<pre class="chords">G          C
 I wanna wish you a vegan Christmas,
-D                  G
+D          G
 I wanna wish you a vegan Christmas,
-Em                 C
+Em         C
 I wanna wish you a vegan Christmas,
-         D             G
+     D       G
 from the bottom of my heart.</pre>
 
 (Repeat)  

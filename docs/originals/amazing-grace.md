@@ -8,22 +8,22 @@ title: "Amazing Grace"
 
 - [https://soundcloud.com/evahamer/amazing-grace](https://soundcloud.com/evahamer/amazing-grace)
 
-<pre class="chords">D                       G       D
+<pre class="chords">D                    G      D
 I once was lost but now I’m found
-D                     A
+D                A
 Once you set me free
-D               G         D
+D             G       D
 I knew a life I couldn’t dream
-D                   A        D
+D               A       D
 You made someone of me</pre>
 
 <pre class="chords">D
 Amazing grace, that you would come
-A7                              D
+A7                          D
 And choose, from all there, me
-D                       G       D
+D                    G      D
 When I was sick and angry, you
-D               A          D
+D             A        D
 Were there to comfort me</pre>
 
 **CHORUS**  
@@ -36,41 +36,41 @@ Were there to comfort me</pre>
 **A7     D**  
 **You loved and carried me**  
 
-<pre class="chords">D                          G            D
+<pre class="chords">D                      G        D
 When you appeared I cried and feared
-D                     A
+D                A
 This surely was the end
-D                       G       D
+D                    G      D
 I couldn’t think or dream or know
-D                   A      D
+D               A    D
 That you would be a friend
-D                                G    D
+D                            G  D
 Through so much pain and misery
-D                               A7
+D                           A7
 You cannot start to know
-D                               G    D
+D                        G   D
 Your grace delivered me safely
-D                 A          D
+D            A     D
 Together we could go</pre>
 
 **CHORUS**  
 
-<pre class="chords">D                       G       D
+<pre class="chords">D                    G      D
 When we’ve been here for 40 years
-D                              A
+D                        A
 You’re old and grey and weak
-D                             G              D
+D                       G             D
 The treasures lie where old thoughts die
-D                 A          D
+D            A     D
 The power’s for the meek</pre>
 
-<pre class="chords">D                             G              D
+<pre class="chords">D                       G             D
 How sweet your name will sound to me
-D                                A7
+D                         A7
 Throughout my withering years
-D                             G              D
+D                       G             D
 You saved my body, loved my soul
-D                 A             D
+D            A       D
 And chased away my fears</pre>
 
 **CHORUS**  

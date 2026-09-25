@@ -12,19 +12,19 @@ title: "I’d Do The Same For You"
 Went inside a farm
 Cmaj9
 To see it for myself
-G                            Cmaj9
+G                       Cmaj9
 What I saw were animals living in hell</pre>
 
-<pre class="chords">G               Cmaj9
+<pre class="chords">G             Cmaj9
 So I did what you would’ve done
 G
 I opened up the cage
 Cmaj9
 So they could live free from harm</pre>
 
-<pre class="chords">D/F#                 C
+<pre class="chords">D/F#             C
 I know you might think I’m a criminal
-D/F#                       C
+D/F#                   C
 But I would’ve done the same for you all</pre>
 
 Stepped inside a lab  

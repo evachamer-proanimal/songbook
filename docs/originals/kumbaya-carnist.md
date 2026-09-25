@@ -8,13 +8,13 @@ title: "Kumbaya Carnist"
 
 - [Recording](https://www.youtube.com/watch?v=E1hdHhtGntA)
 
-<pre class="chords">Am                                 E7
+<pre class="chords">Am                            E7
 Oh what a privilege a reason to die
-                                        Am
+                                   Am
 I gave him that and he gave me his life
-                                      E7
+                               E7
 I ate his dead body to sustain my own
-                                    Am
+                              Am
 No I didn’t need it but it was still nice</pre>
 
 Oh what a privilege a reason to live  
@@ -23,9 +23,9 @@ I sold off their bodies so I got their milk
 Oh what a privilege a reason to live  
 
 <pre class="chords">CHORUS
-Am                                      E7
+Am                                 E7
 I’m a kumbaya kumbaya kumbaya carnist
-Am                                      E7
+Am                                 E7
 I’m a kumbaya kumbaya kumbaya carnist</pre>
 
 I am the pride of my mother nature  

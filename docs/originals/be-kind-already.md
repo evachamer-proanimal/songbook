@@ -16,7 +16,7 @@ title: "Be Kind Already"
     Certainly not, all my insistence
     Cm
     That she can feel.
-                       Gm
+              Gm
     Her pain is real.
     Gm
     When will I see a burst of compassion
@@ -24,34 +24,34 @@ title: "Be Kind Already"
     That equals your love of music and fashion?
     Cm
     What will it take
-                      Gm
+              Gm
     For you to break?</pre>
 
     <pre class="chords"><strong>CHORUS</strong>
-          A#
+       A#
     Be KIND, already
-                             F
+                  F
     Let go of your pride, already
-                            Gm
+                 Gm
     Listen to their cries, already
-                              D#
+                  D#
     And open your heart!
-        A#
+      A#
     Enough, already
-                           Fmaj
+                 Fmaj
     I’m losing my mind, already
-                           Gm
+                 Gm
     Protesting’s a grind, already
-                                   D#
+                     D#
     I know that you’re smart!</pre>
 
     <pre class="chords">Gm
     You see yourself as a beacon of virtue
-          Dm
+       Dm
     But what if some stranger decided to hurt you
     Cm
     Like you hurt him
-                          Gm
+                Gm
     Would it be a sin
     Gm
     What will it take to crush your denial?
@@ -59,13 +59,13 @@ title: "Be Kind Already"
     When will you see he’s just a child?
     Cm
     It’s not his fate
-                     Gm
+             Gm
     To fill your plate</pre>
 
     <pre class="chords"><strong>CHORUS</strong>
     Gm.                           Dm.         Cm
     Be kind, be kind, be kind, be kind!
-               Gm
+          Gm
     JUST BE KIND!
     Gm
     You think I’m just out to make trouble
@@ -73,7 +73,7 @@ title: "Be Kind Already"
     As you fight like hell to stay in your bubble.
     Cm
     But, you will see
-                                    Gm
+                      Gm
     That history’s on my side</pre>
 
     **CHORUS**  

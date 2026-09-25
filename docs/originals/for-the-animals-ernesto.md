@@ -1,8 +1,8 @@
 ---
-title: "For the Animals- Ernesto"
+title: "For the Animals (Ernesto)"
 ---
 
-# For the Animals- Ernesto
+# For the Animals (Ernesto)
 
 *Ernesto Alonso Melchor · CHORUS*
 
@@ -10,11 +10,11 @@ title: "For the Animals- Ernesto"
 
 <pre class="chords">C#m
 We are here to shift the social norms
-         B
-We are here to rock, to rock the boat
-        A
-We are here for the animals
         B
+We are here to rock, to rock the boat
+       A
+We are here for the animals
+       B
 We are here for the animals</pre>
 
 Because we’ve lived a lie for far too long  
@@ -23,13 +23,13 @@ For the animals
 Take action for the animals  
 
 <pre class="chords">VERSE
-                 F#m
+               F#m
 Because there are no heroes here
-      E
+   E
 No excuses too dear
-      D
+   D
 It’s up to us to light the path
-      E
+   E
 To liberation, let’s light the path</pre>
 
 Don’t be afraid  

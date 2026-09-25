@@ -10,20 +10,20 @@ title: "Liberation for Us All"
 
 <pre class="chords">E
 Liberation for the animals
-A                       E
+A                    E
 Liberation for the animals
 E
 Liberation for the animals
-A              B7      E
+A          B7   E
 Liberation for us all</pre>
 
 <pre class="chords">E
 Every farm and lab and zoo and every circus that you see
-A                                           E
+A                                    E
 Every tank and every cage a sign of human tyranny
 E
 But we can bring about a world where every animal is free
-A               B7  E
+A             B7 E
 Liberation for us all</pre>
 
 Every bleating of the lamb and every crow and every cry  
