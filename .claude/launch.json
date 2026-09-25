@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "songbook", "runtimeExecutable": ".venv/bin/mkdocs", "runtimeArgs": ["serve", "-a", "127.0.0.1:8123"], "port": 8123 }
+  ]
+}

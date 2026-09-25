@@ -1,0 +1,19 @@
+
+pre.chords {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  white-space: pre;
+  overflow-x: auto;
+  background: none;
+  padding: 0;
+  margin: 0 0 1.2em 0;
+  color: var(--md-typeset-color);
+}
+pre.chords strong { color: var(--md-accent-fg-color); }
+.md-typeset h1 + p em { color: var(--md-default-fg-color--light); }
+.md-typeset table:not([class]) td p { margin: 0.2em 0; }
+@media print {
+  .md-header, .md-sidebar, .md-footer, .md-tabs { display: none !important; }
+  pre.chords { font-size: 10pt; }
+}

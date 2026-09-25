@@ -1,0 +1,140 @@
+site_name: Animal Liberation Songbook
+site_description: Songs, chords, lyrics and sheet music for the animal rights movement.
+site_url: https://evachamer-proanimal.github.io/songbook/
+repo_url: https://github.com/evachamer-proanimal/songbook
+edit_uri: edit/main/docs/
+theme:
+  name: material
+  palette:
+  - media: '(prefers-color-scheme: light)'
+    scheme: default
+    primary: green
+    accent: green
+    toggle:
+      icon: material/brightness-7
+      name: Switch to dark mode
+  - media: '(prefers-color-scheme: dark)'
+    scheme: slate
+    primary: green
+    accent: green
+    toggle:
+      icon: material/brightness-4
+      name: Switch to light mode
+  features:
+  - navigation.instant
+  - navigation.tracking
+  - navigation.top
+  - search.suggest
+  - search.highlight
+  - content.tabs.link
+  - content.action.edit
+  - toc.integrate
+  icon:
+    logo: material/music-note
+extra_css:
+- stylesheets/songbook.css
+markdown_extensions:
+- attr_list
+- md_in_html
+- tables
+- pymdownx.tabbed:
+    alternate_style: true
+- pymdownx.superfences
+- pymdownx.magiclink
+plugins:
+- search
+nav:
+- Home: index.md
+- Animal Liberation Originals:
+  - Abattoir (A calf’s plea): originals/abattoir-a-calfs-plea.md
+  - All They Want is Freedom: originals/all-they-want-is-freedom.md
+  - Amazing Grace: originals/amazing-grace.md
+  - Animal Liberation Now: originals/animal-liberation-now.md
+  - Ashes for Animals: originals/ashes-for-animals.md
+  - Ban Meat Berkeley: originals/ban-meat-berkeley.md
+  - Be Kind Already: originals/be-kind-already.md
+  - Bella: originals/bella.md
+  - Blue Skies: originals/blue-skies.md
+  - Can You Help?: originals/can-you-help.md
+  - Come Closer: originals/come-closer.md
+  - Every Goat Has a Story: originals/every-goat-has-a-story.md
+  - Flower on my Grave: originals/flower-on-my-grave.md
+  - For the Animals: originals/for-the-animals.md
+  - For the Animals- Ernesto: originals/for-the-animals-ernesto.md
+  - Free as a Bird: originals/free-as-a-bird.md
+  - Glass Walls: originals/glass-walls.md
+  - God Bless the Vermin: originals/god-bless-the-vermin.md
+  - Happy Safe and Free: originals/happy-safe-and-free.md
+  - Humanos y Animales: originals/humanos-y-animales.md
+  - Humans and Animals: originals/humans-and-animals.md
+  - I’d Do The Same For You: originals/id-do-the-same-for-you.md
+  - I Have Heard: originals/i-have-heard.md
+  - I’m an Animal, Please Don’t Eat Me: originals/im-an-animal-please-dont-eat-me.md
+  - Innocence: originals/innocence.md
+  - It’s Time: originals/its-time.md
+  - I Will Wait for You: originals/i-will-wait-for-you.md
+  - Justice For Animals (Chant Song): originals/justice-for-animals-chant-song.md
+  - Kumbaya Carnist: originals/kumbaya-carnist.md
+  - Leave Animals Alone: originals/leave-animals-alone.md
+  - Let Them Be: originals/let-them-be.md
+  - Liberación: originals/liberacion.md
+  - Liberation: originals/liberation.md
+  - Light on Your Feet (Qing song): originals/light-on-your-feet-qing-song.md
+  - Madison: originals/madison.md
+  - May the Animals Be Happy: originals/may-the-animals-be-happy.md
+  - Monochrome: originals/monochrome.md
+  - Mushroom Song: originals/mushroom-song.md
+  - Talking Vegan Blues: originals/talking-vegan-blues.md
+- Rewrites:
+  - All I Want: rewrites/all-i-want.md
+  - Angie: rewrites/angie.md
+  - AR Amazing Grace: rewrites/ar-amazing-grace.md
+  - Cargill House of Murder: rewrites/cargill-house-of-murder.md
+  - Cargills Chicken Song: rewrites/cargills-chicken-song.md
+  - Daze of Obstruction: rewrites/daze-of-obstruction.md
+  - Find The Cost Of Freedom: rewrites/find-the-cost-of-freedom.md
+  - Hallelujah: rewrites/hallelujah.md
+  - Hallelujah Rewrite for ASM Vigils: rewrites/hallelujah-rewrite-for-asm-vigils.md
+  - Hey There Dahlia: rewrites/hey-there-dahlia.md
+  - Imagine: rewrites/imagine.md
+  - It Isn't Nice Chords (AR): rewrites/it-isnt-nice-chords-ar.md
+  - Liberation for Us All: rewrites/liberation-for-us-all.md
+  - Old Man - Animal Liberation: rewrites/old-man-animal-liberation.md
+  - Vegan: rewrites/vegan.md
+  - Which Side Are You On?: rewrites/which-side-are-you-on.md
+  - Holiday Songs:
+    - Animals: rewrites/holiday-songs/animals.md
+    - AR Hanukkah Song: rewrites/holiday-songs/ar-hanukkah-song.md
+    - Family Family Family: rewrites/holiday-songs/family-family-family.md
+    - Peaceful Night (Silent Night): rewrites/holiday-songs/peaceful-night-silent-night.md
+    - Rudolph The Rescued Reindeer: rewrites/holiday-songs/rudolph-the-rescued-reindeer.md
+    - Vegana Navidad: rewrites/holiday-songs/vegana-navidad.md
+    - What Are You Doing Next May?: rewrites/holiday-songs/what-are-you-doing-next-may.md
+- Songs from Other Movements:
+  - Ain’t Gonna Let Nobody Turn Me Around: other-movements/aint-gonna-let-nobody-turn-me-around.md
+  - All Rise Up: other-movements/all-rise-up.md
+  - Ceasefire Chorus (Lyrics & Recordings): other-movements/ceasefire-chorus-lyrics-recordings.md
+  - Change is Gonna Come: other-movements/change-is-gonna-come.md
+  - Circle Round for Freedom: other-movements/circle-round-for-freedom.md
+  - Courage, My Friend: other-movements/courage-my-friend.md
+  - Do it Now: other-movements/do-it-now.md
+  - Donna Donna: other-movements/donna-donna.md
+  - Find The Cost Of Freedom: other-movements/find-the-cost-of-freedom.md
+  - Have you been to Jail for Justice?: other-movements/have-you-been-to-jail-for-justice.md
+  - Have you been to jail for justice alt harmony: other-movements/have-you-been-to-jail-for-justice-alt-harmony.md
+  - I’m Signing Up: other-movements/im-signing-up.md
+  - It Isn't Nice: other-movements/it-isnt-nice.md
+  - May the River: other-movements/may-the-river.md
+  - Never Turning Back: other-movements/never-turning-back.md
+  - Rise like the Water: other-movements/rise-like-the-water.md
+  - The Tide is Rising: other-movements/the-tide-is-rising.md
+  - We Shall Overcome: other-movements/we-shall-overcome.md
+  - When you were born you cried: other-movements/when-you-were-born-you-cried.md
+  - Work to Be Done: other-movements/work-to-be-done.md
+- Handouts:
+  - ALC Music Handout: handouts/alc-music-handout.md
+  - Chant Songs: handouts/chant-songs.md
+  - I'm In Here: handouts/im-in-here.md
+  - Lyrics Handout: handouts/lyrics-handout.md
+  - Songs for Deescalation: handouts/songs-for-deescalation.md
+  - The Haunting of SF Chants: handouts/the-haunting-of-sf-chants.md
