@@ -1,0 +1,5 @@
+title: Animal Liberation Originals
+sort:
+  by: title
+  ignore_case: true
+  sections: last

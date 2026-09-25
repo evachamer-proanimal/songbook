@@ -1,0 +1,5 @@
+title: Rewrites
+sort:
+  by: title
+  ignore_case: true
+  sections: last

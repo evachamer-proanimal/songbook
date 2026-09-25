@@ -1,0 +1,5 @@
+title: Holiday Songs
+sort:
+  by: title
+  ignore_case: true
+  sections: last

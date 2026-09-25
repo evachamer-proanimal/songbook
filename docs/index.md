@@ -1,5 +1,5 @@
 ---
-title: Welcome
+title: Home
 ---
 
 # Animal Liberation Songbook
@@ -16,10 +16,6 @@ and antispeciesist message are welcome.
 
 Please email comments, suggestions, and submissions to **[eva@proanimal.org](mailto:eva@proanimal.org)**.
 When submitting, include as much musical information as you have: lyrics, chords, sheet music, and recordings.
-
-## Collaboration
-
-You are encouraged to contact songwriters for collaborative purposes. Email the address above for contact information.
 
 ## Copyright
 

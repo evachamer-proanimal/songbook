@@ -534,6 +534,14 @@ def main():
     with open(os.path.join(DOCS, "index.md"), "w", encoding="utf-8") as fh:
         fh.write(INDEX_MD.format(n=len(all_pages)))
 
+    # Navigation is driven by .nav.yml files (mkdocs-awesome-nav) so that adding a page = adding a file.
+    top_sections = [(sub, t) for _, (sub, t, _) in SECTIONS.items() if "/" not in sub]
+    with open(os.path.join(DOCS, ".nav.yml"), "w") as fh:
+        fh.write("nav:\n  - index.md\n" + "".join(f"  - {sub}\n" for sub, _ in top_sections))
+    for _, (sub, t, _) in SECTIONS.items():
+        with open(os.path.join(DOCS, sub, ".nav.yml"), "w") as fh:
+            fh.write(f"title: {t}\nsort:\n  by: title\n  ignore_case: true\n  sections: last\n")
+
     import yaml
     cfg = {
         "site_name": "Animal Liberation Songbook",
@@ -556,8 +564,7 @@ def main():
         "extra_css": ["stylesheets/songbook.css"],
         "markdown_extensions": ["attr_list", "md_in_html", "tables",
                                 {"pymdownx.tabbed": {"alternate_style": True}}, "pymdownx.superfences", "pymdownx.magiclink", "admonition"],
-        "plugins": ["search"],
-        "nav": nav,
+        "plugins": ["search", "awesome-nav"],
     }
     with open(os.path.join(REPO, "mkdocs.yml"), "w") as fh:
         yaml.safe_dump(cfg, fh, sort_keys=False, allow_unicode=True, width=200)
@@ -574,7 +581,7 @@ def main():
 
 
 INDEX_MD = """---
-title: Welcome
+title: Home
 ---
 
 # Animal Liberation Songbook
@@ -591,10 +598,6 @@ and antispeciesist message are welcome.
 
 Please email comments, suggestions, and submissions to **[eva@proanimal.org](mailto:eva@proanimal.org)**.
 When submitting, include as much musical information as you have: lyrics, chords, sheet music, and recordings.
-
-## Collaboration
-
-You are encouraged to contact songwriters for collaborative purposes. Email the address above for contact information.
 
 ## Copyright
 
