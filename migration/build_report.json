@@ -341,34 +341,6 @@
    "other-movements/work-to-be-done.md"
   ],
   [
-   "ALC Music Handout",
-   "handouts/alc-music-handout.md"
-  ],
-  [
-   "CALF Song",
-   "handouts/calf-song.md"
-  ],
-  [
-   "Chant Songs",
-   "handouts/chant-songs.md"
-  ],
-  [
-   "I'm In Here",
-   "handouts/im-in-here.md"
-  ],
-  [
-   "Lyrics Handout",
-   "handouts/lyrics-handout.md"
-  ],
-  [
-   "Songs for Deescalation",
-   "handouts/songs-for-deescalation.md"
-  ],
-  [
-   "The Haunting of SF Chants",
-   "handouts/the-haunting-of-sf-chants.md"
-  ],
-  [
    "All My Friends",
    "commercial-artists/all-my-friends.md"
   ],
@@ -397,5 +369,38 @@
    "commercial-artists/youve-got-time.md"
   ]
  ],
- "skipped": []
+ "skipped": [
+  [
+   "ALC Music Handout lyrics only",
+   "unknown folder Handouts"
+  ],
+  [
+   "ALC Music Handout with chords",
+   "unknown folder Handouts"
+  ],
+  [
+   "CALF Song Lyrics.docx",
+   "unknown folder Handouts"
+  ],
+  [
+   "Chant Songs",
+   "unknown folder Handouts"
+  ],
+  [
+   "I'm In Here Lyrics.pdf",
+   "unknown folder Handouts"
+  ],
+  [
+   "Lyrics",
+   "unknown folder Handouts"
+  ],
+  [
+   "Songs for Deescalation",
+   "unknown folder Handouts"
+  ],
+  [
+   "The Haunting of SF Chants",
+   "unknown folder Handouts"
+  ]
+ ]
 }

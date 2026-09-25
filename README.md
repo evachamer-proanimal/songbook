@@ -5,7 +5,8 @@ with GitHub Pages.
 
 ## Layout
 
-- `docs/` – one Markdown page per song, grouped into `originals/`, `rewrites/`, `other-movements/`, `handouts/`.
+- `docs/` – one Markdown page per song, grouped into `originals/`, `rewrites/`, `other-movements/`, `commercial-artists/`.
+  The old Drive "Handouts" folder (event compilations) is archived but not published.
   Sheet music PDFs and recordings live in `docs/files/`.
 - `archive/drive-export/` – the original Google Drive files exactly as exported at migration time (Sept 2026).
 - `migration/` – the scripts that crawled the public Drive folder and generated `docs/`. They are kept for provenance

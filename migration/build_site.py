@@ -26,7 +26,7 @@ SECTIONS = {
     "Rewrites": ("rewrites", "Rewrites", False),
     "Rewrites/Holiday Songs": ("rewrites/holiday-songs", "Holiday Songs", False),
     "Other Movements": ("other-movements", "Songs from Other Movements", False),
-    "Handouts": ("handouts", "Handouts", True),
+    # "Handouts" intentionally left out: they were event-specific compilations of songs that have their own pages.
     "Commercial Artists": ("commercial-artists", "Songs by Commercial Artists", False),
 }
 SECTION_NOTICE = {
@@ -589,14 +589,12 @@ and antispeciesist message are welcome.
 
 ## Submissions
 
-Please email comments, suggestions, and submissions. When submitting, include as much musical
-information as you have: lyrics, chords, sheet music, and recordings.
-
-*Submission address coming soon.*
+Please email comments, suggestions, and submissions to **[eva@proanimal.org](mailto:eva@proanimal.org)**.
+When submitting, include as much musical information as you have: lyrics, chords, sheet music, and recordings.
 
 ## Collaboration
 
-You are encouraged to contact songwriters for collaborative purposes. Ask via the submissions address for contact information.
+You are encouraged to contact songwriters for collaborative purposes. Email the address above for contact information.
 
 ## Copyright
 
@@ -605,7 +603,7 @@ unless otherwise noted on the song's page. These works are free to use, distribu
 and without commercial gain. Songs in the *Songs by Commercial Artists* section are the property of their
 copyright holders and are presented for personal use only.
 
-*{n} songs and handouts in the collection.*
+*{n} songs in the collection.*
 """
 
 CSS = """
