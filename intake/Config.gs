@@ -1,10 +1,11 @@
 /**
  * Songbook intake: settings.
  *
- * Secrets are NOT here. Put these two in Project Settings -> Script properties:
- *   ANTHROPIC_API_KEY   an API key from console.anthropic.com
- *   GITHUB_TOKEN        a fine-grained personal access token limited to the songbook repo
- *                       (Contents: read & write, Pull requests: read & write)
+ * Secrets are NOT here. Put these in Project Settings -> Script properties:
+ *   ANTHROPIC_API_KEY    an API key from console.anthropic.com        (PROVIDER 'anthropic')
+ *   OPENROUTER_API_KEY   an API key from openrouter.ai                 (PROVIDER 'openrouter')
+ *   GITHUB_TOKEN         a fine-grained personal access token limited to the songbook repo
+ *                        (Contents: read & write, Pull requests: read & write)
  */
 const CONFIG = {
   // Gmail label that marks a message as a songbook submission. Forwarding a
@@ -18,9 +19,14 @@ const CONFIG = {
   BASE_BRANCH: 'main',
   SITE_URL: 'https://evachamer-proanimal.github.io/songbook/',
 
-  // Claude settings. Effort "medium" keeps a single call well inside the
-  // Apps Script fetch timeout; raise to "high" if pages come back sloppy.
-  MODEL: 'claude-opus-5',
+  // Which API the Claude call goes through: 'anthropic' (direct) or 'openrouter'.
+  // OpenRouter bills the same model through your OpenRouter credits; it uses
+  // the OpenAI-style endpoint, so the model id carries an "anthropic/" prefix.
+  PROVIDER: 'openrouter',
+  MODEL: 'claude-opus-5',                    // used when PROVIDER is 'anthropic'
+  OPENROUTER_MODEL: 'anthropic/claude-opus-5', // used when PROVIDER is 'openrouter'
+  // Effort "medium" keeps a single call well inside the Apps Script fetch
+  // timeout; raise to "high" if pages come back sloppy.
   EFFORT: 'medium',
   MAX_TOKENS: 16000,
 

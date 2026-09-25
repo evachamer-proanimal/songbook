@@ -31,7 +31,9 @@ All of this happens signed in as **evachamer@gmail.com**.
 
 ### 2. Tokens
 
-- **Anthropic API key**: console.anthropic.com → API keys → Create key. Costs are a few cents per submission.
+- **Model key**: either an **OpenRouter** key (openrouter.ai → Keys; set `PROVIDER: 'openrouter'` in `Config.gs`, the default)
+  or an **Anthropic** key (console.anthropic.com → API keys; set `PROVIDER: 'anthropic'`). Either way it's
+  the same Claude model and a few cents per submission; OpenRouter adds a small fee and bills your OpenRouter credits.
 - **GitHub token**: github.com → Settings → Developer settings → Fine-grained tokens → Generate.
   Resource owner `evachamer-proanimal`, repository access *Only select repositories* → `songbook`,
   permissions **Contents: Read and write** and **Pull requests: Read and write**, expiry 1 year
@@ -51,7 +53,7 @@ If clasp asks about overwriting the manifest, say yes: `appsscript.json` here ca
 ### 4. Secrets
 
 In the Apps Script editor: Project Settings (gear) → Script properties → add
-`ANTHROPIC_API_KEY` and `GITHUB_TOKEN`.
+`GITHUB_TOKEN` and either `OPENROUTER_API_KEY` or `ANTHROPIC_API_KEY`, matching `PROVIDER`.
 
 ### 5. Authorize and schedule
 

@@ -23,7 +23,8 @@
 
 function setup() {
   [CONFIG.LABEL, CONFIG.DONE_LABEL, CONFIG.FAILED_LABEL].forEach(getOrCreateLabel_);
-  const missing = ['ANTHROPIC_API_KEY', 'GITHUB_TOKEN'].filter(k => !prop_(k));
+  const keyName = CONFIG.PROVIDER === 'openrouter' ? 'OPENROUTER_API_KEY' : 'ANTHROPIC_API_KEY';
+  const missing = [keyName, 'GITHUB_TOKEN'].filter(k => !prop_(k));
   if (missing.length) {
     throw new Error('Add these Script properties first (Project Settings -> Script properties): ' + missing.join(', '));
   }
@@ -247,12 +248,21 @@ function systemPrompt_() {
 }
 
 function draftPage_(sub) {
-  const content = [];
   let text = 'Subject: ' + sub.subject + '\nFrom: ' + sub.from + '\n\n--- EMAIL BODY ---\n' + sub.body.slice(0, 60000);
   sub.docs.forEach(d => { text += '\n\n--- ATTACHED DOCUMENT (' + d.url + ') ---\n' + d.markdown.slice(0, 60000); });
   if (sub.uploads.length) text += '\n\n(Files that will be attached to the page: ' + sub.uploads.map(u => u.name).join(', ') + ')';
   if (sub.skipped.length) text += '\n\n(Attachments skipped: ' + sub.skipped.map(s => s.name + ' – ' + s.reason).join('; ') + ')';
 
+  const raw = CONFIG.PROVIDER === 'openrouter' ? callOpenRouter_(text, sub) : callAnthropic_(text, sub);
+  const draft = JSON.parse(raw);
+  if (!draft.is_song) throw new Error('Not treated as a song submission: ' + draft.summary);
+  draft.slug = (draft.slug || draft.title).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'untitled';
+  return draft;
+}
+
+/** Direct Anthropic Messages API. Returns the JSON text of the drafted page. */
+function callAnthropic_(text, sub) {
+  const content = [];
   sub.pdfs.forEach(p => content.push({
     type: 'document', title: p.name,
     source: { type: 'base64', media_type: 'application/pdf', data: Utilities.base64Encode(p.blob.getBytes()) },
@@ -285,10 +295,50 @@ function draftPage_(sub) {
   if (msg.stop_reason === 'max_tokens') throw new Error('Claude ran out of output tokens; raise CONFIG.MAX_TOKENS');
   const textBlock = (msg.content || []).find(b => b.type === 'text');
   if (!textBlock) throw new Error('Claude returned no text block: ' + JSON.stringify(msg).slice(0, 800));
-  const draft = JSON.parse(textBlock.text);
-  if (!draft.is_song) throw new Error('Not treated as a song submission: ' + draft.summary);
-  draft.slug = (draft.slug || draft.title).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'untitled';
-  return draft;
+  return textBlock.text;
+}
+
+/** Same call through OpenRouter's OpenAI-style endpoint. Returns the JSON text of the drafted page. */
+function callOpenRouter_(text, sub) {
+  const content = [];
+  sub.pdfs.forEach(p => content.push({
+    type: 'file',
+    file: { filename: p.name, file_data: 'data:application/pdf;base64,' + Utilities.base64Encode(p.blob.getBytes()) },
+  }));
+  sub.images.forEach(i => content.push({
+    type: 'image_url',
+    image_url: { url: 'data:' + i.blob.getContentType() + ';base64,' + Utilities.base64Encode(i.blob.getBytes()) },
+  }));
+  content.push({ type: 'text', text: text });
+
+  const body = {
+    model: CONFIG.OPENROUTER_MODEL,
+    max_tokens: CONFIG.MAX_TOKENS,
+    reasoning: { effort: CONFIG.EFFORT },
+    response_format: { type: 'json_schema', json_schema: { name: 'songbook_page', strict: true, schema: PAGE_SCHEMA } },
+    messages: [
+      { role: 'system', content: systemPrompt_() },
+      { role: 'user', content: content },
+    ],
+  };
+  if (sub.pdfs.length) body.plugins = [{ id: 'file-parser', pdf: { engine: 'native' } }];
+  const res = UrlFetchApp.fetch('https://openrouter.ai/api/v1/chat/completions', {
+    method: 'post', contentType: 'application/json', payload: JSON.stringify(body), muteHttpExceptions: true,
+    headers: {
+      Authorization: 'Bearer ' + prop_('OPENROUTER_API_KEY'),
+      'HTTP-Referer': CONFIG.SITE_URL,
+      'X-Title': 'Animal Liberation Songbook intake',
+    },
+  });
+  if (res.getResponseCode() !== 200) throw new Error('OpenRouter ' + res.getResponseCode() + ': ' + res.getContentText().slice(0, 800));
+  const msg = JSON.parse(res.getContentText());
+  if (msg.error) throw new Error('OpenRouter error: ' + JSON.stringify(msg.error).slice(0, 800));
+  const choice = (msg.choices || [])[0];
+  if (!choice || !choice.message) throw new Error('OpenRouter returned no choices: ' + JSON.stringify(msg).slice(0, 800));
+  if (choice.finish_reason === 'length') throw new Error('Model ran out of output tokens; raise CONFIG.MAX_TOKENS');
+  let out = choice.message.content;
+  if (Array.isArray(out)) out = out.filter(p => p.type === 'text').map(p => p.text).join('');
+  return String(out).replace(/^```(?:json)?\s*|\s*```$/g, '');
 }
 
 // ---------------------------------------------------------------- GitHub
