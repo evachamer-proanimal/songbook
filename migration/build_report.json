@@ -49,6 +49,10 @@
    "originals/every-goat-has-a-story.md"
   ],
   [
+   "First They Ignore You",
+   "originals/first-they-ignore-you.md"
+  ],
+  [
    "Flower on my Grave",
    "originals/flower-on-my-grave.md"
   ],
@@ -101,6 +105,10 @@
    "originals/innocence.md"
   ],
   [
+   "Interrupt Bigots",
+   "originals/interrupt-bigots.md"
+  ],
+  [
    "It’s Time",
    "originals/its-time.md"
   ],
@@ -147,6 +155,10 @@
   [
    "Monochrome",
    "originals/monochrome.md"
+  ],
+  [
+   "Ms. Chicken",
+   "originals/ms-chicken.md"
   ],
   [
    "Mushroom Song",
@@ -333,6 +345,10 @@
    "handouts/alc-music-handout.md"
   ],
   [
+   "CALF Song",
+   "handouts/calf-song.md"
+  ],
+  [
    "Chant Songs",
    "handouts/chant-songs.md"
   ],
@@ -351,28 +367,35 @@
   [
    "The Haunting of SF Chants",
    "handouts/the-haunting-of-sf-chants.md"
+  ],
+  [
+   "All My Friends",
+   "commercial-artists/all-my-friends.md"
+  ],
+  [
+   "I'm in here",
+   "commercial-artists/im-in-here.md"
+  ],
+  [
+   "Long May You Run",
+   "commercial-artists/long-may-you-run.md"
+  ],
+  [
+   "Pronto Terminará by Dramatic Symphony",
+   "commercial-artists/pronto-terminara-by-dramatic-symphony.md"
+  ],
+  [
+   "Rescue",
+   "commercial-artists/rescue.md"
+  ],
+  [
+   "Use Somebody",
+   "commercial-artists/use-somebody.md"
+  ],
+  [
+   "You’ve Got Time",
+   "commercial-artists/youve-got-time.md"
   ]
  ],
- "skipped": [
-  [
-   "Abattoir.MP3",
-   "not publicly downloadable (Drive asks for sign-in)"
-  ],
-  [
-   "First They Ignore You.pdf",
-   "not publicly downloadable (Drive asks for sign-in)"
-  ],
-  [
-   "Interrupt Bigots.pdf",
-   "not publicly downloadable (Drive asks for sign-in)"
-  ],
-  [
-   "Ms. Chicken.docx",
-   "not publicly downloadable (Drive asks for sign-in)"
-  ],
-  [
-   "CALF Song Lyrics.docx",
-   "not publicly downloadable (Drive asks for sign-in)"
-  ]
- ]
+ "skipped": []
 }

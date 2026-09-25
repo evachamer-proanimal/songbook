@@ -40,4 +40,11 @@ I don’t want to die, but I hit the ground.
 Ending is….  A minor (1/4) C (1/4) G (1/4) E minor (1/4)  
 
 
-<!-- sources: gdoc:1TzC9rXgZbEPZ4eo2NknflruSi9XFrTse_VUWtwMEu8A -->
+## Files
+
+- [Abattoir](../files/originals/Abattoir.MP3)
+
+<audio controls preload="none" src="../../files/originals/Abattoir.MP3"></audio>
+
+
+<!-- sources: gdoc:1TzC9rXgZbEPZ4eo2NknflruSi9XFrTse_VUWtwMEu8A; drive:0B659fY6sR4iHSU1yTVVmQ1Y4R05TNjR3NGVXN2llU0lBcUJz -->

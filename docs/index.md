@@ -27,6 +27,7 @@ You are encouraged to contact songwriters for collaborative purposes. Ask via th
 
 All works are licensed under [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 unless otherwise noted on the song's page. These works are free to use, distribute, and adapt with attribution
-and without commercial gain.
+and without commercial gain. Songs in the *Songs by Commercial Artists* section are the property of their
+copyright holders and are presented for personal use only.
 
-*88 songs and handouts in the collection.*
+*99 songs and handouts in the collection.*

@@ -41,6 +41,7 @@ markdown_extensions:
     alternate_style: true
 - pymdownx.superfences
 - pymdownx.magiclink
+- admonition
 plugins:
 - search
 nav:
@@ -58,6 +59,7 @@ nav:
   - Can You Help?: originals/can-you-help.md
   - Come Closer: originals/come-closer.md
   - Every Goat Has a Story: originals/every-goat-has-a-story.md
+  - First They Ignore You: originals/first-they-ignore-you.md
   - Flower on my Grave: originals/flower-on-my-grave.md
   - For the Animals (Corey & Eva): originals/for-the-animals.md
   - For the Animals (Ernesto): originals/for-the-animals-ernesto.md
@@ -71,6 +73,7 @@ nav:
   - I Have Heard: originals/i-have-heard.md
   - I’m an Animal, Please Don’t Eat Me: originals/im-an-animal-please-dont-eat-me.md
   - Innocence: originals/innocence.md
+  - Interrupt Bigots: originals/interrupt-bigots.md
   - It’s Time: originals/its-time.md
   - I Will Wait for You: originals/i-will-wait-for-you.md
   - Justice For Animals (Chant Song): originals/justice-for-animals-chant-song.md
@@ -83,6 +86,7 @@ nav:
   - Madison: originals/madison.md
   - May the Animals Be Happy: originals/may-the-animals-be-happy.md
   - Monochrome: originals/monochrome.md
+  - Ms. Chicken: originals/ms-chicken.md
   - Mushroom Song: originals/mushroom-song.md
   - Talking Vegan Blues: originals/talking-vegan-blues.md
 - Rewrites:
@@ -133,8 +137,17 @@ nav:
   - Work to Be Done: other-movements/work-to-be-done.md
 - Handouts:
   - ALC Music Handout: handouts/alc-music-handout.md
+  - CALF Song: handouts/calf-song.md
   - Chant Songs: handouts/chant-songs.md
   - I'm In Here: handouts/im-in-here.md
   - Lyrics Handout: handouts/lyrics-handout.md
   - Songs for Deescalation: handouts/songs-for-deescalation.md
   - The Haunting of SF Chants: handouts/the-haunting-of-sf-chants.md
+- Songs by Commercial Artists:
+  - All My Friends: commercial-artists/all-my-friends.md
+  - I'm in here: commercial-artists/im-in-here.md
+  - Long May You Run: commercial-artists/long-may-you-run.md
+  - Pronto Terminará by Dramatic Symphony: commercial-artists/pronto-terminara-by-dramatic-symphony.md
+  - Rescue: commercial-artists/rescue.md
+  - Use Somebody: commercial-artists/use-somebody.md
+  - You’ve Got Time: commercial-artists/youve-got-time.md

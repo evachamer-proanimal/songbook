@@ -27,6 +27,10 @@ SECTIONS = {
     "Rewrites/Holiday Songs": ("rewrites/holiday-songs", "Holiday Songs", False),
     "Other Movements": ("other-movements", "Songs from Other Movements", False),
     "Handouts": ("handouts", "Handouts", True),
+    "Commercial Artists": ("commercial-artists", "Songs by Commercial Artists", False),
+}
+SECTION_NOTICE = {
+    "Commercial Artists": "These songs are the property of their copyright holders and are presented for personal use only.",
 }
 
 # Per-item fixes keyed by Drive item name.
@@ -196,7 +200,8 @@ URL_RE = re.compile(r"(?<![\(\"'>])(https?://[^\s\)\]>\"']+)")
 
 def tidy_title(t):
     t = unescape_md(t)
-    t = re.sub(r"^[\*_#\s]+|[\*_\s]+$", "", t).strip(" “”\"'")
+    t = re.sub(r"^[\*_#`\s]+|[\*_`\s]+$", "", t).strip(" “”\"'")
+    t = re.sub(r"^Title:\s*", "", t, flags=re.I)
     t = re.sub(r"\s{2,}", " ", t)
     if t.isupper() and len(t) > 3:
         t = t.title().replace("'S ", "'s ").replace("’S ", "’s ")
@@ -239,7 +244,7 @@ def parse_song(md, fallback_title):
                 links += [(label, url) for url in u]
                 consumed += 1
             elif len(s) <= 90 and not re.search(r"[.!?]$", s.rstrip(")")) and len(credits) < 3:
-                credits.append(unescape_md(re.sub(r"[\*_]", "", s)).strip())
+                credits.append(unescape_md(re.sub(r"[\*_`]", "", s)).strip())
                 consumed += 1
             else:
                 break
@@ -323,11 +328,13 @@ def render_body(body):
     return "\n".join(out)
 
 
-def render_page(title, credits, links, variants, attachments, sources):
+def render_page(title, credits, links, variants, attachments, sources, notice=None):
     """variants: list of (label, rendered_body). attachments: list of (label, relpath)."""
     lines = [f"---\ntitle: \"{title.replace(chr(34), chr(39))}\"\n---\n", f"# {title}\n"]
     if credits:
         lines.append("*" + " · ".join(credits) + "*\n")
+    if notice:
+        lines.append(f'!!! note ""\n    {notice}\n')
     if links:
         seen = set()
         for label, url in links:
@@ -511,7 +518,7 @@ def main():
                 fn = f"{slug}-{n}.md"; n += 1
             used_titles[norm(title.split(" (")[0]) if "(" in title else norm(title)] = (title, drive_base, fn)
             with open(os.path.join(outdir, fn), "w", encoding="utf-8") as fh:
-                fh.write(render_page(title, credits, links, variants, attachments, sources))
+                fh.write(render_page(title, credits, links, variants, attachments, sources, SECTION_NOTICE.get(top)))
             pages.append((title, f"{subdir}/{fn}"))
         pages.sort(key=lambda p: norm(p[0]))
         all_pages += pages
@@ -548,7 +555,7 @@ def main():
         },
         "extra_css": ["stylesheets/songbook.css"],
         "markdown_extensions": ["attr_list", "md_in_html", "tables",
-                                {"pymdownx.tabbed": {"alternate_style": True}}, "pymdownx.superfences", "pymdownx.magiclink"],
+                                {"pymdownx.tabbed": {"alternate_style": True}}, "pymdownx.superfences", "pymdownx.magiclink", "admonition"],
         "plugins": ["search"],
         "nav": nav,
     }
@@ -595,7 +602,8 @@ You are encouraged to contact songwriters for collaborative purposes. Ask via th
 
 All works are licensed under [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 unless otherwise noted on the song's page. These works are free to use, distribute, and adapt with attribution
-and without commercial gain.
+and without commercial gain. Songs in the *Songs by Commercial Artists* section are the property of their
+copyright holders and are presented for personal use only.
 
 *{n} songs and handouts in the collection.*
 """
