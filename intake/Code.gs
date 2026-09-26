@@ -179,7 +179,8 @@ function wordToMarkdown_(blob) {
 
 // ---------------------------------------------------------------- Claude
 
-const PAGE_SCHEMA = {
+function pageSchema_() {
+  return {
   type: 'object',
   additionalProperties: false,
   required: ['section', 'slug', 'title', 'page_markdown', 'summary', 'review_notes', 'is_song'],
@@ -192,7 +193,8 @@ const PAGE_SCHEMA = {
     summary: { type: 'string', description: 'one or two sentences for the pull request description' },
     review_notes: { type: 'string', description: 'anything the human reviewer should check: guessed chords, missing verses, copyright questions, unclear authorship. Empty string if nothing.' },
   },
-};
+  };
+}
 
 function systemPrompt_() {
   return [
@@ -277,7 +279,7 @@ function callAnthropic_(text, sub) {
     model: CONFIG.MODEL,
     max_tokens: CONFIG.MAX_TOKENS,
     fallbacks: 'default',
-    output_config: { effort: CONFIG.EFFORT, format: { type: 'json_schema', schema: PAGE_SCHEMA } },
+    output_config: { effort: CONFIG.EFFORT, format: { type: 'json_schema', schema: pageSchema_() } },
     system: systemPrompt_(),
     messages: [{ role: 'user', content: content }],
   };
@@ -315,7 +317,7 @@ function callOpenRouter_(text, sub) {
     model: CONFIG.OPENROUTER_MODEL,
     max_tokens: CONFIG.MAX_TOKENS,
     reasoning: { effort: CONFIG.EFFORT },
-    response_format: { type: 'json_schema', json_schema: { name: 'songbook_page', strict: true, schema: PAGE_SCHEMA } },
+    response_format: { type: 'json_schema', json_schema: { name: 'songbook_page', strict: true, schema: pageSchema_() } },
     messages: [
       { role: 'system', content: systemPrompt_() },
       { role: 'user', content: content },
