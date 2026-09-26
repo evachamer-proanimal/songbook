@@ -12,10 +12,14 @@ solidarity and group identity, and to communicate messages to outsiders. This so
 and support a comparable musical culture within the animal rights movement. All songs with a nonviolent
 and antispeciesist message are welcome.
 
-## Submissions
+## Submit a song
 
-Please email comments, suggestions, and submissions to **[eva@proanimal.org](mailto:eva@proanimal.org)**.
-When submitting, include as much musical information as you have: lyrics, chords, sheet music, and recordings.
+Two ways, whichever is easier:
+
+- **[Fill in the submission form](https://docs.google.com/forms/d/e/1FAIpQLSfhisOWk-JEPewNs2GTLvraX_tRbDyNKZ0EoziRnR0VjU8JFA/viewform)** with the lyrics, chords, and links.
+- **Email [eva@proanimal.org](mailto:eva@proanimal.org)** with anything you have: lyrics, chords, sheet music, recordings, or a link to a document.
+
+Include as much musical information as you can. Songs are reviewed before they appear here, usually within a few days.
 
 ## Copyright
 

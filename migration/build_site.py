@@ -372,13 +372,23 @@ def render_page(title, credits, links, variants, attachments, sources, notice=No
 
 # ---------------------------------------------------------------- main
 
+MANIFEST = os.path.join(HERE, "generated_files.json")
+GENERATED = []  # docs-relative paths written by this run
+
+
+def track(path):
+    GENERATED.append(os.path.relpath(path, DOCS))
+    return path
+
+
 def main():
-    if os.path.isdir(DOCS):
-        for entry in os.listdir(DOCS):
-            p = os.path.join(DOCS, entry)
-            if entry in ("stylesheets", "CNAME"):
-                continue
-            shutil.rmtree(p) if os.path.isdir(p) else os.remove(p)
+    # Remove only what a previous run generated, so pages added later by hand or
+    # by the intake script (pull requests) survive a rebuild.
+    if os.path.exists(MANIFEST):
+        for rel in json.load(open(MANIFEST)):
+            p = os.path.join(DOCS, rel)
+            if os.path.isfile(p):
+                os.remove(p)
     os.makedirs(FILES, exist_ok=True)
 
     items = [i for i in TREE if i["kind"] != "Shared folder" and i.get("files") and not i.get("error")]
@@ -486,7 +496,7 @@ def main():
                     fname += {"PDF": ".pdf", "Audio": ".mp3"}.get(it["kind"], "")
                 dest_dir = os.path.join(FILES, subdir)
                 os.makedirs(dest_dir, exist_ok=True)
-                shutil.copy2(src, os.path.join(dest_dir, fname))
+                shutil.copy2(src, track(os.path.join(dest_dir, fname)))
                 depth = subdir.count("/") + 1
                 rel = "../" * depth + f"files/{subdir}/{fname}".replace(" ", "%20")
                 label = re.sub(r"\.(pdf|mp3)$", "", it["name"], flags=re.I)
@@ -517,7 +527,7 @@ def main():
             while os.path.exists(os.path.join(outdir, fn)):
                 fn = f"{slug}-{n}.md"; n += 1
             used_titles[norm(title.split(" (")[0]) if "(" in title else norm(title)] = (title, drive_base, fn)
-            with open(os.path.join(outdir, fn), "w", encoding="utf-8") as fh:
+            with open(track(os.path.join(outdir, fn)), "w", encoding="utf-8") as fh:
                 fh.write(render_page(title, credits, links, variants, attachments, sources, SECTION_NOTICE.get(top)))
             pages.append((title, f"{subdir}/{fn}"))
         pages.sort(key=lambda p: norm(p[0]))
@@ -531,15 +541,15 @@ def main():
         else:
             nav.append({navtitle: entry})
 
-    with open(os.path.join(DOCS, "index.md"), "w", encoding="utf-8") as fh:
+    with open(track(os.path.join(DOCS, "index.md")), "w", encoding="utf-8") as fh:
         fh.write(INDEX_MD.format(n=len(all_pages)))
 
     # Navigation is driven by .nav.yml files (mkdocs-awesome-nav) so that adding a page = adding a file.
     top_sections = [(sub, t) for _, (sub, t, _) in SECTIONS.items() if "/" not in sub]
-    with open(os.path.join(DOCS, ".nav.yml"), "w") as fh:
+    with open(track(os.path.join(DOCS, ".nav.yml")), "w") as fh:
         fh.write("nav:\n  - index.md\n" + "".join(f"  - {sub}\n" for sub, _ in top_sections))
     for _, (sub, t, _) in SECTIONS.items():
-        with open(os.path.join(DOCS, sub, ".nav.yml"), "w") as fh:
+        with open(track(os.path.join(DOCS, sub, ".nav.yml")), "w") as fh:
             fh.write(f"title: {t}\nsort:\n  by: title\n  ignore_case: true\n  sections: last\n")
 
     import yaml
@@ -570,8 +580,9 @@ def main():
         yaml.safe_dump(cfg, fh, sort_keys=False, allow_unicode=True, width=200)
 
     os.makedirs(os.path.join(DOCS, "stylesheets"), exist_ok=True)
-    with open(os.path.join(DOCS, "stylesheets", "songbook.css"), "w") as fh:
+    with open(track(os.path.join(DOCS, "stylesheets", "songbook.css")), "w") as fh:
         fh.write(CSS)
+    json.dump(sorted(set(GENERATED)), open(MANIFEST, "w"), indent=0)
 
     json.dump({"pages": all_pages, "skipped": skipped}, open(os.path.join(HERE, "build_report.json"), "w"),
               indent=1, ensure_ascii=False)
@@ -594,10 +605,14 @@ solidarity and group identity, and to communicate messages to outsiders. This so
 and support a comparable musical culture within the animal rights movement. All songs with a nonviolent
 and antispeciesist message are welcome.
 
-## Submissions
+## Submit a song
 
-Please email comments, suggestions, and submissions to **[eva@proanimal.org](mailto:eva@proanimal.org)**.
-When submitting, include as much musical information as you have: lyrics, chords, sheet music, and recordings.
+Two ways, whichever is easier:
+
+- **[Fill in the submission form](https://docs.google.com/forms/d/e/1FAIpQLSfhisOWk-JEPewNs2GTLvraX_tRbDyNKZ0EoziRnR0VjU8JFA/viewform)** with the lyrics, chords, and links.
+- **Email [eva@proanimal.org](mailto:eva@proanimal.org)** with anything you have: lyrics, chords, sheet music, recordings, or a link to a document.
+
+Include as much musical information as you can. Songs are reviewed before they appear here, usually within a few days.
 
 ## Copyright
 
