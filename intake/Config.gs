@@ -28,7 +28,7 @@ const CONFIG = {
   // Effort "medium" keeps a single call well inside the Apps Script fetch
   // timeout; raise to "high" if pages come back sloppy.
   EFFORT: 'medium',
-  MAX_TOKENS: 16000,
+  MAX_TOKENS: 32000,   // reasoning tokens count against this too when going through OpenRouter
 
   // Where alerts and "your PR is ready" notes go. Defaults to the account
   // running the script.
