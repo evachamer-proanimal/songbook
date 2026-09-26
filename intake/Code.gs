@@ -193,6 +193,39 @@ function addAttachment_(sub, blob, label, origin) {
   }
 }
 
+/** Export a Google Doc as Markdown using the running account's access. Returns null if not readable. */
+function exportGoogleDoc_(fileId) {
+  const res = UrlFetchApp.fetch('https://www.googleapis.com/drive/v3/files/' + fileId + '/export?mimeType=text/markdown', {
+    headers: { Authorization: 'Bearer ' + ScriptApp.getOAuthToken() }, muteHttpExceptions: true,
+  });
+  return res.getResponseCode() === 200 ? res.getContentText() : null;
+}
+
+/** Word -> temporary Google Doc -> Markdown -> delete the temp doc. */
+function wordToMarkdown_(blob) {
+  const token = ScriptApp.getOAuthToken();
+  const boundary = 'songbook' + Date.now();
+  const meta = JSON.stringify({ name: 'songbook-tmp-' + Date.now(), mimeType: 'application/vnd.google-apps.document' });
+  const payload = Utilities.newBlob(
+    '--' + boundary + '\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n' + meta +
+    '\r\n--' + boundary + '\r\nContent-Type: ' + blob.getContentType() + '\r\n\r\n').getBytes()
+    .concat(blob.getBytes())
+    .concat(Utilities.newBlob('\r\n--' + boundary + '--').getBytes());
+  const up = UrlFetchApp.fetch('https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart', {
+    method: 'post', contentType: 'multipart/related; boundary=' + boundary, payload: payload,
+    headers: { Authorization: 'Bearer ' + token }, muteHttpExceptions: true,
+  });
+  if (up.getResponseCode() !== 200) return null;
+  const id = JSON.parse(up.getContentText()).id;
+  try {
+    return exportGoogleDoc_(id);
+  } finally {
+    UrlFetchApp.fetch('https://www.googleapis.com/drive/v3/files/' + id, {
+      method: 'delete', headers: { Authorization: 'Bearer ' + token }, muteHttpExceptions: true,
+    });
+  }
+}
+
 /** Download a Drive file (not a Google Doc) with the running account's access. Returns a Blob or null. */
 function downloadDriveFile_(fileId, info) {
   info = info || driveFileInfo_(fileId);
