@@ -14,12 +14,11 @@ and antispeciesist message are welcome.
 
 ## Submit a song
 
-Two ways, whichever is easier:
+**[Fill in the submission form](https://docs.google.com/forms/d/e/1FAIpQLSfhisOWk-JEPewNs2GTLvraX_tRbDyNKZ0EoziRnR0VjU8JFA/viewform)**
+with the lyrics, chords, and any links to recordings or sheet music. Include as much musical information as you can.
+If you have files you'd rather send another way, say so in the form and leave your email; we'll get in touch.
 
-- **[Fill in the submission form](https://docs.google.com/forms/d/e/1FAIpQLSfhisOWk-JEPewNs2GTLvraX_tRbDyNKZ0EoziRnR0VjU8JFA/viewform)** with the lyrics, chords, and links.
-- **Email [eva@proanimal.org](mailto:eva@proanimal.org)** with anything you have: lyrics, chords, sheet music, recordings, or a link to a document.
-
-Include as much musical information as you can. Songs are reviewed before they appear here, usually within a few days.
+Songs are reviewed before they appear here, usually within a few days.
 
 ## Copyright
 
