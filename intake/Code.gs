@@ -112,26 +112,7 @@ function collectSubmission_(messages) {
     skipped: [],    // attachments we did not use, with a reason
   };
 
-  // Google Docs links -> Markdown via the Drive export endpoint.
-  const seen = new Set();
-  (body.match(/https:\/\/docs\.google\.com\/document\/d\/[A-Za-z0-9_-]+/g) || []).forEach(url => {
-    const id = url.split('/d/')[1];
-    if (seen.has(id)) return;
-    seen.add(id);
-    const md = exportGoogleDoc_(id);
-    if (md) sub.docs.push({ url: url, markdown: md });
-    else sub.skipped.push({ name: url, reason: 'Google Doc not readable by this account' });
-  });
-
-  // Google Drive file links (recordings, PDFs) -> treated like attachments.
-  (body.match(/https:\/\/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?id=)([A-Za-z0-9_-]+)/g) || []).forEach(url => {
-    const id = url.match(/([A-Za-z0-9_-]{20,})/)[1];
-    if (seen.has(id)) return;
-    seen.add(id);
-    const blob = downloadDriveFile_(id);
-    if (blob) addAttachment_(sub, blob, 'Drive link ' + url, 'linked in the email body');
-    else sub.skipped.push({ name: url, reason: 'Drive file not readable by this account (ask the sender to share it, or forward the file)' });
-  });
+  harvestLinks_(sub, body);
 
   const seenAtt = new Set();
   messages.forEach((m, i) => {
@@ -143,6 +124,27 @@ function collectSubmission_(messages) {
     });
   });
   return sub;
+}
+
+/** Pull Google Docs and Drive file links out of free text into the submission. */
+function harvestLinks_(sub, text) {
+  const seen = sub.seenLinkIds = sub.seenLinkIds || new Set();
+  (text.match(/https:\/\/docs\.google\.com\/document\/d\/[A-Za-z0-9_-]+/g) || []).forEach(url => {
+    const id = url.split('/d/')[1];
+    if (seen.has(id)) return;
+    seen.add(id);
+    const md = exportGoogleDoc_(id);
+    if (md) sub.docs.push({ url: url, markdown: md });
+    else sub.skipped.push({ name: url, reason: 'Google Doc not readable by this account' });
+  });
+  (text.match(/https:\/\/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?id=)([A-Za-z0-9_-]+)/g) || []).forEach(url => {
+    const id = url.match(/([A-Za-z0-9_-]{20,})/)[1];
+    if (seen.has(id)) return;
+    seen.add(id);
+    const blob = downloadDriveFile_(id);
+    if (blob) addAttachment_(sub, blob, 'Drive link ' + url, 'linked in the text');
+    else sub.skipped.push({ name: url, reason: 'Drive file not readable by this account (ask the sender to share it, or forward the file)' });
+  });
 }
 
 function addAttachment_(sub, blob, label, origin) {
@@ -279,6 +281,8 @@ function systemPrompt_() {
     '',
     'RULES:',
     '- Transcribe the song exactly as submitted. Never invent lyrics, verses, chords or authorship.',
+    '- Chords may arrive inline in square brackets, e.g. "[C]Every goat has a [G]story". Convert those to the chord-over-lyric',
+    '  layout: chord line above, each chord starting at the column of the word it precedes, brackets removed.',
     '- Attached PDFs, documents and images ARE part of the submission. When the email body has no lyrics, the song is in the',
     '  attachment: transcribe lyrics (and chords if legible) from it. Only set is_song=false when no lyrics exist anywhere.',
     '  If chords in a PDF or image cannot be read reliably, leave the page lyrics-only and say so in review_notes.',
@@ -525,12 +529,35 @@ const FORM_FIELDS = {
   title: 'Song title',
   credits: 'Songwriter / credits (for a rewrite, also name the original tune)',
   text: 'Lyrics and chords',
+  doclink: 'Link to a Google Doc with the song (optional)',
   links: 'Links (recordings, karaoke tracks, sheet music)',
   section: 'Which section fits best?',
   name: 'Your name',
   email: 'Your email (only so we can ask a question about the song)',
   files: 'Files (sheet music PDF, recording, chord chart photo)',
 };
+
+const LYRICS_HELP = 'Paste the lyrics. For chords, write each chord in square brackets right before the word it falls on, ' +
+  'like: [C]Every goat has a [G]story. Or paste a chord chart from another document (spacing is kept), ' +
+  'or share a Google Doc / attach a PDF or photo below.';
+const DOCLINK_HELP = 'If the song lives in a Google Doc, paste its link here (set sharing to "Anyone with the link can view").';
+
+/** Bring an already-created form in line with the current questions and help text. */
+function updateSubmissionForm() {
+  const id = prop_('FORM_ID');
+  if (!id) throw new Error('No FORM_ID script property; run createSubmissionForm() instead.');
+  const form = FormApp.openById(id);
+  const items = form.getItems();
+  const byTitle = {};
+  items.forEach(it => { byTitle[it.getTitle()] = it; });
+  if (byTitle[FORM_FIELDS.text]) byTitle[FORM_FIELDS.text].setHelpText(LYRICS_HELP);
+  if (!byTitle[FORM_FIELDS.doclink]) {
+    const item = form.addTextItem().setTitle(FORM_FIELDS.doclink).setHelpText(DOCLINK_HELP);
+    const after = byTitle[FORM_FIELDS.text];
+    if (after) form.moveItem(item.getIndex(), after.getIndex() + 1);
+  }
+  Logger.log('Form updated: ' + form.getEditUrl());
+}
 
 /** Build the submission form once. Logs the URL to share. */
 function createSubmissionForm() {
@@ -540,8 +567,8 @@ function createSubmissionForm() {
   form.setCollectEmail(false);
   form.addTextItem().setTitle(FORM_FIELDS.title).setRequired(true);
   form.addTextItem().setTitle(FORM_FIELDS.credits);
-  form.addParagraphTextItem().setTitle(FORM_FIELDS.text).setRequired(true)
-    .setHelpText('Paste the whole song. Put chords on the line above the lyrics they go with.');
+  form.addParagraphTextItem().setTitle(FORM_FIELDS.text).setRequired(true).setHelpText(LYRICS_HELP);
+  form.addTextItem().setTitle(FORM_FIELDS.doclink).setHelpText(DOCLINK_HELP);
   form.addParagraphTextItem().setTitle(FORM_FIELDS.links);
   form.addMultipleChoiceItem().setTitle(FORM_FIELDS.section)
     .setChoiceValues(['An original song for the animal movement', 'A rewrite of an existing tune', 'A song from another movement', 'A song by a commercial artist', 'Not sure']);
@@ -573,9 +600,10 @@ function onFormSubmit(e) {
     date: new Date(),
     messageId: 'form response ' + e.response.getId(),
     body: ['Song title: ' + get('title'), 'Credits: ' + get('credits'), 'Preferred section: ' + get('section'),
-           'Links:\n' + get('links'), '', '--- SONG ---', get('text')].join('\n'),
+           'Google Doc: ' + get('doclink'), 'Links:\n' + get('links'), '', '--- SONG ---', get('text')].join('\n'),
     docs: [], pdfs: [], images: [], uploads: [], skipped: [],
   };
+  harvestLinks_(sub, get('doclink') + '\n' + get('links') + '\n' + get('text'));
   const fileIds = [].concat(get('files') || []);
   fileIds.forEach(id => {
     try {

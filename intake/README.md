@@ -62,10 +62,12 @@ Optionally run `testClaude()` and read the log to see a drafted page before send
 
 ### 6. Optional: the submission form
 
-Run `createSubmissionForm()` once; the log prints a share link and an edit link. Then run
+Run `createSubmissionForm()` once (or `updateSubmissionForm()` to refresh an existing form's questions); the log prints a share link and an edit link. Then run
 `installFormTrigger()`. Put the share link on the songbook's home page (edit `docs/index.md`
 in the repo) or anywhere else. Notes on the form:
 
+- Chords go in square brackets before the word they fall on (`[C]Every goat has a [G]story`); the script lays them out
+  over the lyrics. Pasted chord charts and Google Doc links work too.
 - Text-only submissions need no Google sign-in. The *Files* question does force respondents to
   sign in to a Google account, which is a Google Forms rule, not ours. Delete that question in the
   form editor if you'd rather keep the form fully anonymous; email remains the path for attachments.
