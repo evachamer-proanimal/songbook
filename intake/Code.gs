@@ -73,7 +73,8 @@ function processSubmissions() {
       } catch (err) {
         thread.addLabel(failed);
         notify_('Songbook: submission failed', 'Could not process "' + thread.getFirstMessageSubject() + '".\n\n' +
-          (err && err.stack || err) + '\n\nOriginal email: ' + gmailLink_(thread) +
+          (err && err.stack || err) + '\n\n' + (err && err.diagnostics ? 'What the script found: ' + err.diagnostics + '\n\n' : '') +
+          'Original email: ' + gmailLink_(thread) +
           '\n\nFix the cause, then run retryFailed() in the Apps Script editor.');
       }
     });
@@ -83,22 +84,24 @@ function processSubmissions() {
 }
 
 function handleThread_(thread) {
-  const messages = thread.getMessages();
-  const message = messages[messages.length - 1]; // the forwarded copy is the newest
-  const submission = collectSubmission_(message);
+  const submission = collectSubmission_(thread.getMessages());
   const draft = draftPage_(submission);
   return openPullRequest_(draft, submission, gmailLink_(thread));
 }
 
 // ---------------------------------------------------------------- gather the email
 
-function collectSubmission_(message) {
-  const body = message.getPlainBody() || '';
+function collectSubmission_(messages) {
+  // A forwarded thread can carry the attachments on an earlier message than the
+  // one with the note, so read every message: newest body first, all attachments.
+  const newest = messages[messages.length - 1];
+  const bodies = messages.slice().reverse().map(m => m.getPlainBody() || '');
+  const body = bodies.join('\n\n--- earlier message in thread ---\n\n');
   const sub = {
-    subject: message.getSubject(),
-    from: message.getFrom(),
-    date: message.getDate(),
-    messageId: 'email ' + message.getId(),
+    subject: newest.getSubject(),
+    from: newest.getFrom(),
+    date: newest.getDate(),
+    messageId: 'email ' + newest.getId(),
     body: body,
     docs: [],       // {url, markdown}
     pdfs: [],       // {name, blob}
@@ -107,7 +110,7 @@ function collectSubmission_(message) {
     skipped: [],    // attachments we did not use, with a reason
   };
 
-  // Google Docs links in the body -> Markdown via the Drive export endpoint.
+  // Google Docs links -> Markdown via the Drive export endpoint.
   const seen = new Set();
   (body.match(/https:\/\/docs\.google\.com\/document\/d\/[A-Za-z0-9_-]+/g) || []).forEach(url => {
     const id = url.split('/d/')[1];
@@ -118,30 +121,63 @@ function collectSubmission_(message) {
     else sub.skipped.push({ name: url, reason: 'Google Doc not readable by this account' });
   });
 
-  message.getAttachments({ includeInlineImages: true, includeAttachments: true }).forEach(att => {
-    const name = att.getName() || 'attachment';
-    const mime = (att.getContentType() || '').toLowerCase();
-    const mb = att.getSize() / (1024 * 1024);
-    if (mb > CONFIG.MAX_ATTACHMENT_MB) {
-      sub.skipped.push({ name: name, reason: 'larger than ' + CONFIG.MAX_ATTACHMENT_MB + ' MB' });
-    } else if (mime === 'application/pdf' || /\.pdf$/i.test(name)) {
-      sub.pdfs.push({ name: name, blob: att });
-      sub.uploads.push({ name: name, blob: att });
-    } else if (mime.startsWith('audio/') || /\.(mp3|m4a|wav|ogg)$/i.test(name)) {
-      sub.uploads.push({ name: name, blob: att });
-    } else if (mime.startsWith('image/')) {
-      sub.images.push({ name: name, blob: att });
-    } else if (/officedocument\.wordprocessingml|msword/.test(mime) || /\.docx?$/i.test(name)) {
-      const md = wordToMarkdown_(att);
-      if (md) sub.docs.push({ url: name, markdown: md });
-      else sub.skipped.push({ name: name, reason: 'could not convert Word file' });
-    } else if (mime.startsWith('text/')) {
-      sub.docs.push({ url: name, markdown: att.getDataAsString() });
-    } else {
-      sub.skipped.push({ name: name, reason: 'unsupported type ' + mime });
-    }
+  // Google Drive file links (recordings, PDFs) -> treated like attachments.
+  (body.match(/https:\/\/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?id=)([A-Za-z0-9_-]+)/g) || []).forEach(url => {
+    const id = url.match(/([A-Za-z0-9_-]{20,})/)[1];
+    if (seen.has(id)) return;
+    seen.add(id);
+    const blob = downloadDriveFile_(id);
+    if (blob) addAttachment_(sub, blob, 'Drive link ' + url);
+    else sub.skipped.push({ name: url, reason: 'Drive file not readable by this account (ask the sender to share it, or forward the file)' });
+  });
+
+  const seenAtt = new Set();
+  messages.forEach(m => {
+    m.getAttachments({ includeInlineImages: true, includeAttachments: true }).forEach(att => {
+      const key = (att.getName() || '') + ':' + att.getSize();
+      if (seenAtt.has(key)) return;
+      seenAtt.add(key);
+      addAttachment_(sub, att, att.getName() || 'attachment');
+    });
   });
   return sub;
+}
+
+function addAttachment_(sub, blob, label) {
+  const name = blob.getName() || label;
+  const mime = (blob.getContentType() || '').toLowerCase();
+  const mb = blob.getBytes().length / (1024 * 1024);
+  if (mb > CONFIG.MAX_ATTACHMENT_MB) {
+    sub.skipped.push({ name: name, reason: 'larger than ' + CONFIG.MAX_ATTACHMENT_MB + ' MB' });
+  } else if (mime === 'application/pdf' || /\.pdf$/i.test(name)) {
+    sub.pdfs.push({ name: name, blob: blob });
+    sub.uploads.push({ name: name, blob: blob });
+  } else if (mime.startsWith('audio/') || /\.(mp3|m4a|wav|ogg)$/i.test(name)) {
+    sub.uploads.push({ name: name, blob: blob });
+  } else if (mime.startsWith('image/')) {
+    sub.images.push({ name: name, blob: blob });
+  } else if (/officedocument\.wordprocessingml|msword/.test(mime) || /\.docx?$/i.test(name)) {
+    const md = wordToMarkdown_(blob);
+    if (md) sub.docs.push({ url: name, markdown: md });
+    else sub.skipped.push({ name: name, reason: 'could not convert Word file' });
+  } else if (mime.startsWith('text/')) {
+    sub.docs.push({ url: name, markdown: blob.getDataAsString() });
+  } else {
+    sub.skipped.push({ name: name, reason: 'unsupported type ' + mime });
+  }
+}
+
+/** Download a Drive file (not a Google Doc) with the running account's access. Returns a Blob or null. */
+function downloadDriveFile_(fileId) {
+  const headers = { Authorization: 'Bearer ' + ScriptApp.getOAuthToken() };
+  const meta = UrlFetchApp.fetch('https://www.googleapis.com/drive/v3/files/' + fileId + '?fields=name,mimeType,size', { headers: headers, muteHttpExceptions: true });
+  if (meta.getResponseCode() !== 200) return null;
+  const info = JSON.parse(meta.getContentText());
+  if ((info.mimeType || '').startsWith('application/vnd.google-apps')) return null; // Docs/Sheets: handled elsewhere
+  if (Number(info.size || 0) > CONFIG.MAX_ATTACHMENT_MB * 1024 * 1024) return null;
+  const res = UrlFetchApp.fetch('https://www.googleapis.com/drive/v3/files/' + fileId + '?alt=media', { headers: headers, muteHttpExceptions: true });
+  if (res.getResponseCode() !== 200) return null;
+  return res.getBlob().setName(info.name).setContentType(info.mimeType);
 }
 
 /** Export a Google Doc as Markdown using the running account's access. Returns null if not readable. */
@@ -238,8 +274,10 @@ function systemPrompt_() {
     'And replace them all with glass  ',
     '',
     'RULES:',
-    '- Transcribe the song exactly as submitted. Never invent lyrics, verses, chords or authorship. If chords are only in an',
-    '  attached PDF or image, transcribe them; if you cannot read them reliably, leave the page lyrics-only and say so in review_notes.',
+    '- Transcribe the song exactly as submitted. Never invent lyrics, verses, chords or authorship.',
+    '- Attached PDFs, documents and images ARE part of the submission. When the email body has no lyrics, the song is in the',
+    '  attachment: transcribe lyrics (and chords if legible) from it. Only set is_song=false when no lyrics exist anywhere.',
+    '  If chords in a PDF or image cannot be read reliably, leave the page lyrics-only and say so in review_notes.',
     '- Strip email noise: greetings, signatures, quoted headers, "Sent from my iPhone", the forwarding banner.',
     '- Do not mention attachments in the page; the files section is added separately.',
     '- Pick the section by the song\'s nature. A parody of a known song is a rewrite. A published song by a recording artist,',
@@ -255,9 +293,16 @@ function draftPage_(sub) {
   if (sub.uploads.length) text += '\n\n(Files that will be attached to the page: ' + sub.uploads.map(u => u.name).join(', ') + ')';
   if (sub.skipped.length) text += '\n\n(Attachments skipped: ' + sub.skipped.map(s => s.name + ' – ' + s.reason).join('; ') + ')';
 
+  const diagnostics = 'PDFs ' + sub.pdfs.length + ', documents ' + sub.docs.length + ', images ' + sub.images.length +
+    ', files to upload ' + sub.uploads.length + ', skipped ' + sub.skipped.length +
+    (sub.skipped.length ? ' (' + sub.skipped.map(x => x.name + ': ' + x.reason).join('; ') + ')' : '');
   const raw = CONFIG.PROVIDER === 'openrouter' ? callOpenRouter_(text, sub) : callAnthropic_(text, sub);
   const draft = JSON.parse(raw);
-  if (!draft.is_song) throw new Error('Not treated as a song submission: ' + draft.summary);
+  if (!draft.is_song) {
+    const e = new Error('Not treated as a song submission: ' + draft.summary);
+    e.diagnostics = diagnostics;
+    throw e;
+  }
   draft.slug = (draft.slug || draft.title).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'untitled';
   return draft;
 }
