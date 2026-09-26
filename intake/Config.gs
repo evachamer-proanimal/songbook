@@ -35,10 +35,11 @@ const CONFIG = {
   ALERT_EMAIL: '',
 
   // Attachments larger than this are skipped and noted in the pull request.
-  // Apps Script can send at most 50 MB per request and base64 adds a third,
-  // so ~35 MB is the practical ceiling. Big recordings belong on a streaming
-  // link, not in the repo anyway.
-  MAX_ATTACHMENT_MB: 35,
+  // Apps Script caps a single outgoing request well below its documented
+  // 50 MB once base64 and JSON are added; 20 MB is known to fit. Anything
+  // bigger is still listed in the PR so you can link to it instead. Big
+  // recordings belong on a streaming link, not in the repo anyway.
+  MAX_ATTACHMENT_MB: 20,
 
   // How often the trigger runs, in minutes (1, 5, 10, 15 or 30).
   POLL_MINUTES: 10,

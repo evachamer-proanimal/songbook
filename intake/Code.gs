@@ -413,7 +413,8 @@ function githubHeaders_() {
 function gh_(method, path, payload) {
   const res = UrlFetchApp.fetch('https://api.github.com' + path, {
     method: method, headers: githubHeaders_(), muteHttpExceptions: true,
-    contentType: 'application/json', payload: payload ? JSON.stringify(payload) : undefined,
+    contentType: 'application/json',
+    payload: payload ? Utilities.newBlob(JSON.stringify(payload), 'application/json').getBytes() : undefined,
   });
   const code = res.getResponseCode();
   const text = res.getContentText();
@@ -445,17 +446,22 @@ function openPullRequest_(draft, sub, sourceLink) {
   uploads.forEach(u => {
     const safe = u.name.replace(/[^\w.\-() ]+/g, '_');
     const path = 'docs/files/' + draft.section + '/' + safe;
-    const b64 = Utilities.base64Encode(u.blob.getBytes());
-    if (b64.length > 45 * 1024 * 1024) {
-      sub.skipped.push({ name: u.name, reason: 'too large to upload from Apps Script (' + Math.round(b64.length / 1.37 / 1048576) + ' MB); link to it instead' });
+    const bytes = u.blob.getBytes();
+    const mb = Math.round(bytes.length / 1048576);
+    if (bytes.length > CONFIG.MAX_ATTACHMENT_MB * 1048576) {
+      sub.skipped.push({ name: u.name, reason: 'too large to upload from Apps Script (' + mb + ' MB); host it elsewhere and link to it' });
       return;
     }
     try {
       gh_('put', repo + '/contents/' + encodeURI(path), {
         message: 'Add ' + safe + ' for ' + draft.title, branch: branch,
-        content: b64,
+        content: Utilities.base64Encode(bytes),
       });
     } catch (err) {
+      if (/Limit Exceeded/i.test(String(err))) {
+        sub.skipped.push({ name: u.name, reason: 'too large to upload from Apps Script (' + mb + ' MB); host it elsewhere and link to it' });
+        return;
+      }
       try { gh_('delete', repo + '/git/refs/heads/' + branch); } catch (_) {}
       throw err;
     }
