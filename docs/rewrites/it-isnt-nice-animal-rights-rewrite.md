@@ -1,8 +1,8 @@
 ---
-title: "It Isn’t Nice"
+title: "It Isn’t Nice (animal rights rewrite)"
 ---
 
-# It Isn’t Nice
+# It Isn’t Nice (animal rights rewrite)
 
 - [recording](https://www.youtube.com/watch?v=UvC4xq32AX8)
 

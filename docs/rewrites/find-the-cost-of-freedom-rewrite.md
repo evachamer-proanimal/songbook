@@ -1,8 +1,8 @@
 ---
-title: "Find The Cost Of Freedom"
+title: "Find The Cost Of Freedom (rewrite)"
 ---
 
-# Find The Cost Of Freedom
+# Find The Cost Of Freedom (rewrite)
 
 *Crosby, Stills, Nash & Young*
 

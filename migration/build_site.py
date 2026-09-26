@@ -41,6 +41,9 @@ OVERRIDES = {
     },
     "Ceasefire Chorus_Lyrics & Recordings": {"title": "Ceasefire Chorus (Lyrics & Recordings)"},
     "Lyrics": {"title": "Lyrics Handout"},
+    # Same song exists in Other Movements; make the animal-rights rewrites unmistakable in search and nav.
+    "It Isn't Nice Chords (AR)": {"title": "It Isn’t Nice (animal rights rewrite)"},
+    "Find the Cost of Freedom rewrite": {"title": "Find The Cost Of Freedom (rewrite)"},
 }
 
 # ---------------------------------------------------------------- helpers
