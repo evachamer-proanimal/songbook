@@ -445,10 +445,20 @@ function openPullRequest_(draft, sub, sourceLink) {
   uploads.forEach(u => {
     const safe = u.name.replace(/[^\w.\-() ]+/g, '_');
     const path = 'docs/files/' + draft.section + '/' + safe;
-    gh_('put', repo + '/contents/' + encodeURI(path), {
-      message: 'Add ' + safe + ' for ' + draft.title, branch: branch,
-      content: Utilities.base64Encode(u.blob.getBytes()),
-    });
+    const b64 = Utilities.base64Encode(u.blob.getBytes());
+    if (b64.length > 45 * 1024 * 1024) {
+      sub.skipped.push({ name: u.name, reason: 'too large to upload from Apps Script (' + Math.round(b64.length / 1.37 / 1048576) + ' MB); link to it instead' });
+      return;
+    }
+    try {
+      gh_('put', repo + '/contents/' + encodeURI(path), {
+        message: 'Add ' + safe + ' for ' + draft.title, branch: branch,
+        content: b64,
+      });
+    } catch (err) {
+      try { gh_('delete', repo + '/git/refs/heads/' + branch); } catch (_) {}
+      throw err;
+    }
     fileLinks.push({ label: safe.replace(/\.[^.]+$/, ''), rel: '../files/' + draft.section + '/' + encodeURIComponent(safe), ext: safe.split('.').pop().toLowerCase() });
   });
 

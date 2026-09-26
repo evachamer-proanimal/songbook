@@ -34,9 +34,11 @@ const CONFIG = {
   // running the script.
   ALERT_EMAIL: '',
 
-  // Attachments larger than this are skipped (GitHub's contents API tops out
-  // around 100 MB; audio rarely needs more than this).
-  MAX_ATTACHMENT_MB: 40,
+  // Attachments larger than this are skipped and noted in the pull request.
+  // Apps Script can send at most 50 MB per request and base64 adds a third,
+  // so ~35 MB is the practical ceiling. Big recordings belong on a streaming
+  // link, not in the repo anyway.
+  MAX_ATTACHMENT_MB: 35,
 
   // How often the trigger runs, in minutes (1, 5, 10, 15 or 30).
   POLL_MINUTES: 10,
