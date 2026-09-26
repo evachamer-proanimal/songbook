@@ -95,8 +95,10 @@ function collectSubmission_(messages) {
   // A forwarded thread can carry the attachments on an earlier message than the
   // one with the note, so read every message: newest body first, all attachments.
   const newest = messages[messages.length - 1];
-  const bodies = messages.slice().reverse().map(m => m.getPlainBody() || '');
-  const body = bodies.join('\n\n--- earlier message in thread ---\n\n');
+  const n = messages.length;
+  const body = messages.map((m, i) =>
+    '--- MESSAGE ' + (i + 1) + ' of ' + n + (i === n - 1 ? ' (newest)' : '') + ' | ' + m.getDate() + ' | from ' + m.getFrom() + ' ---\n' +
+    (m.getPlainBody() || '')).join('\n\n');
   const sub = {
     subject: newest.getSubject(),
     from: newest.getFrom(),
@@ -127,24 +129,26 @@ function collectSubmission_(messages) {
     if (seen.has(id)) return;
     seen.add(id);
     const blob = downloadDriveFile_(id);
-    if (blob) addAttachment_(sub, blob, 'Drive link ' + url);
+    if (blob) addAttachment_(sub, blob, 'Drive link ' + url, 'linked in the email body');
     else sub.skipped.push({ name: url, reason: 'Drive file not readable by this account (ask the sender to share it, or forward the file)' });
   });
 
   const seenAtt = new Set();
-  messages.forEach(m => {
+  messages.forEach((m, i) => {
     m.getAttachments({ includeInlineImages: true, includeAttachments: true }).forEach(att => {
       const key = (att.getName() || '') + ':' + att.getSize();
       if (seenAtt.has(key)) return;
       seenAtt.add(key);
-      addAttachment_(sub, att, att.getName() || 'attachment');
+      addAttachment_(sub, att, att.getName() || 'attachment', 'message ' + (i + 1) + ' of ' + n);
     });
   });
   return sub;
 }
 
-function addAttachment_(sub, blob, label) {
+function addAttachment_(sub, blob, label, origin) {
   const name = blob.getName() || label;
+  sub.origins = sub.origins || {};
+  sub.origins[name] = origin || '';
   const mime = (blob.getContentType() || '').toLowerCase();
   const mb = blob.getBytes().length / (1024 * 1024);
   if (mb > CONFIG.MAX_ATTACHMENT_MB) {
@@ -219,7 +223,7 @@ function pageSchema_() {
   return {
   type: 'object',
   additionalProperties: false,
-  required: ['section', 'slug', 'title', 'page_markdown', 'summary', 'review_notes', 'is_song'],
+  required: ['section', 'slug', 'title', 'page_markdown', 'summary', 'review_notes', 'is_song', 'files_to_attach'],
   properties: {
     is_song: { type: 'boolean', description: 'false if the email does not actually contain a song to add' },
     section: { type: 'string', enum: Object.keys(SECTIONS) },
@@ -279,6 +283,9 @@ function systemPrompt_() {
     '  attachment: transcribe lyrics (and chords if legible) from it. Only set is_song=false when no lyrics exist anywhere.',
     '  If chords in a PDF or image cannot be read reliably, leave the page lyrics-only and say so in review_notes.',
     '- Strip email noise: greetings, signatures, quoted headers, "Sent from my iPhone", the forwarding banner.',
+    '- A thread is ONE song. Read the messages in order; later messages update earlier ones. If a later message corrects lyrics,',
+    '  use the corrected lyrics. If it replaces a recording ("use this instead", "here is the real one"), list only the current',
+    '  file in files_to_attach and mention the replaced one in review_notes. Never make two songs out of one thread.',
     '- Do not mention attachments in the page; the files section is added separately.',
     '- Pick the section by the song\'s nature. A parody of a known song is a rewrite. A published song by a recording artist,',
     '  reproduced as written, is commercial-artists.',
@@ -290,7 +297,8 @@ function systemPrompt_() {
 function draftPage_(sub) {
   let text = 'Subject: ' + sub.subject + '\nFrom: ' + sub.from + '\n\n--- EMAIL BODY ---\n' + sub.body.slice(0, 60000);
   sub.docs.forEach(d => { text += '\n\n--- ATTACHED DOCUMENT (' + d.url + ') ---\n' + d.markdown.slice(0, 60000); });
-  if (sub.uploads.length) text += '\n\n(Files that will be attached to the page: ' + sub.uploads.map(u => u.name).join(', ') + ')';
+  if (sub.uploads.length) text += '\n\n--- FILES AVAILABLE TO ATTACH (name | where it came from) ---\n' +
+    sub.uploads.map(u => u.name + ' | ' + ((sub.origins || {})[u.name] || '')).join('\n');
   if (sub.skipped.length) text += '\n\n(Attachments skipped: ' + sub.skipped.map(s => s.name + ' – ' + s.reason).join('; ') + ')';
 
   const diagnostics = 'PDFs ' + sub.pdfs.length + ', documents ' + sub.docs.length + ', images ' + sub.images.length +
@@ -422,9 +430,15 @@ function openPullRequest_(draft, sub, sourceLink) {
   const branch = 'submission/' + slug + '-' + Utilities.formatDate(new Date(), 'UTC', 'yyyyMMdd-HHmm');
   gh_('post', repo + '/git/refs', { ref: 'refs/heads/' + branch, sha: base });
 
-  // Attachments -> docs/files/<section>/
+  // Attachments -> docs/files/<section>/  (only the ones the draft kept, if it said)
   const fileLinks = [];
-  sub.uploads.forEach(u => {
+  let uploads = sub.uploads;
+  if (Array.isArray(draft.files_to_attach)) {
+    const keep = new Set(draft.files_to_attach);
+    const chosen = sub.uploads.filter(u => keep.has(u.name));
+    if (chosen.length || draft.files_to_attach.length === 0) uploads = chosen;
+  }
+  uploads.forEach(u => {
     const safe = u.name.replace(/[^\w.\-() ]+/g, '_');
     const path = 'docs/files/' + draft.section + '/' + safe;
     gh_('put', repo + '/contents/' + encodeURI(path), {
@@ -461,6 +475,8 @@ function openPullRequest_(draft, sub, sourceLink) {
     '**Source:** ' + sourceLink,
   ];
   if (fileLinks.length) bodyLines.push('**Files:** ' + fileLinks.map(f => f.label + '.' + f.ext).join(', '));
+  const left = sub.uploads.filter(u => !uploads.includes(u));
+  if (left.length) bodyLines.push('**Not attached (superseded in the thread):** ' + left.map(u => u.name).join(', '));
   if (sub.skipped.length) bodyLines.push('**Skipped attachments:** ' + sub.skipped.map(s => s.name + ' (' + s.reason + ')').join(', '));
   if (draft.review_notes) bodyLines.push('', '### Please check', '', draft.review_notes);
   bodyLines.push('', '_Drafted automatically from the emailed submission. Edit the page in this PR if needed, then merge to publish._');
@@ -482,7 +498,7 @@ function prop_(key) {
 }
 
 function gmailLink_(thread) {
-  return 'https://mail.google.com/mail/u/0/#all/' + thread.getId();
+  return 'https://mail.google.com/mail/?authuser=' + encodeURIComponent(Session.getActiveUser().getEmail()) + '#all/' + thread.getId();
 }
 
 function notify_(subject, body) {
